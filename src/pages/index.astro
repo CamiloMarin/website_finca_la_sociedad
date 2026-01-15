@@ -2,6 +2,11 @@
 // Finca la Sociedad - Landing Page
 import "../styles/global.css";
 
+// import Swiper JS
+import Swiper from 'swiper';
+// import Swiper styles
+import 'swiper/css';
+
 const whatsappNumber = "573001234567"; // Reemplaza con tu número real
 const whatsappMessage = "Hola, me interesa reservar la Finca la Sociedad";
 const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
@@ -28,8 +33,7 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
     />
-    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"
-    ></script>
+
   </head>
   <body class="bg-white">
     <!-- Main Menu Section -->
@@ -339,7 +343,7 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
           <!-- Versión Desktop (3 columnas) -->
           <div
             id="desktop-columns"
-            class="hidden md:grid md:grid-cols-3 gap-0 h-[600px]"
+            class="hidden md:grid md:grid-cols-3 gap-0 h-150"
           >
             <!-- Columna 1 - RESIDENTIAL -->
             <div
@@ -446,7 +450,7 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
 
           <!-- Versión Mobile (Swiper) -->
           <div id="mobile-slider" class="md:hidden">
-            <div class="swiper-container h-[500px] rounded-xl overflow-hidden">
+            <div class="swiper-container h-150 rounded-xl overflow-hidden">
               <div class="swiper-wrapper">
                 <!-- Slide 1 - RESIDENTIAL -->
                 <div class="swiper-slide">
@@ -519,11 +523,11 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
               </div>
 
               <!-- Paginación -->
-              <div class="swiper-pagination !bottom-4"></div>
+              <div class="swiper-pagination bottom-4!"></div>
 
               <!-- Navegación -->
-              <div class="swiper-button-next !text-amber-500 !right-4"></div>
-              <div class="swiper-button-prev !text-amber-500 !left-4"></div>
+              <div class="swiper-button-next text-amber-500! right-4!"></div>
+              <div class="swiper-button-prev text-amber-500! left-4!"></div>
             </div>
           </div>
 
@@ -544,156 +548,148 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
 
     <!-- Script para funcionalidad -->
     <script>
-      {
-        // Esperar a que el DOM esté listo
-        document.addEventListener("DOMContentLoaded", function () {
-          let swiperInstance = null;
+      // Esperar a que el DOM esté listo
+      document.addEventListener("DOMContentLoaded", () => {
+        let swiperInstance: any | null = null;
 
-          // Inicializar Swiper para móviles
-          const initSwiper = () => {
-            // Si Swiper está disponible globalmente (vía CDN)
-            if (typeof Swiper !== "undefined") {
-              return new Swiper(".swiper-container", {
-                direction: "horizontal",
-                loop: false,
-                slidesPerView: 1,
-                spaceBetween: 0,
-                centeredSlides: true,
-                pagination: {
-                  el: ".swiper-pagination",
-                  clickable: true,
-                },
-                navigation: {
-                  nextEl: ".swiper-button-next",
-                  prevEl: ".swiper-button-prev",
-                },
-                autoplay: {
-                  delay: 5000,
-                  disableOnInteraction: false,
-                },
-              });
-            }
-            return null;
-          };
-
-          // Inicializar Swiper solo si estamos en móvil
-          if (window.innerWidth < 768) {
-            // Cargar Swiper desde CDN si no está disponible
-            if (typeof Swiper === "undefined") {
-              const link = document.createElement("link");
-              link.rel = "stylesheet";
-              link.href =
-                "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css";
-              document.head.appendChild(link);
-
-              const script = document.createElement("script");
-              script.src =
-                "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js";
-              script.onload = () => {
-                swiperInstance = initSwiper();
-              };
-              document.head.appendChild(script);
-            } else {
-              swiperInstance = initSwiper();
-            }
+        /**
+         * Inicializa Swiper (solo mobile)
+         */
+        const initSwiper = (): any | null => {
+          if (typeof (window as any).Swiper !== "undefined") {
+            return new (window as any).Swiper(".swiper-container", {
+              direction: "horizontal",
+              loop: false,
+              slidesPerView: 1,
+              spaceBetween: 0,
+              centeredSlides: true,
+              pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+              },
+              navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+              },
+              autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+              },
+            });
           }
+          return null;
+        };
 
-          // Manejar el hover en las columnas (solo desktop)
-          const initDesktopHover = () => {
-            const columns = document.querySelectorAll("#desktop-columns > div");
-            const sharedBgImage = document.getElementById("shared-bg-image");
-            const sharedBgContainer = document.getElementById(
-              "shared-bg-container"
-            );
+        /**
+         * Carga Swiper desde CDN si no existe
+         */
+        const loadSwiperFromCDN = (callback: () => void): void => {
+          const link = document.createElement("link");
+          link.rel = "stylesheet";
+          link.href =
+            "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css";
+          document.head.appendChild(link);
 
-            // Variable para rastrear la columna activa
-            let activeColumn = null;
+          const script = document.createElement("script");
+          script.src =
+            "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js";
+          script.onload = callback;
+          document.head.appendChild(script);
+        };
 
-            // Función para activar una columna
-            const activateColumn = (column) => {
-              // Si ya está activa, no hacer nada
-              if (activeColumn === column) return;
+        /**
+         * Inicialización mobile
+         */
+        if (window.innerWidth < 768) {
+          if (typeof (window as any).Swiper === "undefined") {
+            loadSwiperFromCDN(() => {
+              swiperInstance = initSwiper();
+            });
+          } else {
+            swiperInstance = initSwiper();
+          }
+        }
 
-              // Remover activo de todas las columnas
-              columns.forEach((col) => {
-                col.classList.remove("border-amber-500");
-                const indicator = col.querySelector(".absolute.top-6");
-                if (indicator) {
-                  indicator.classList.remove(
-                    "bg-amber-500",
-                    "border-amber-500"
-                  );
-                }
-              });
+        /**
+         * Hover desktop
+         */
+        const initDesktopHover = (): void => {
+          const columns = document.querySelectorAll<HTMLElement>(
+            "#desktop-columns > div"
+          );
 
-              // Activar la columna actual
-              column.classList.add("border-amber-500");
-              const currentIndicator = column.querySelector(".absolute.top-6");
-              if (currentIndicator) {
-                currentIndicator.classList.add(
-                  "bg-amber-500",
-                  "border-amber-500"
-                );
-              }
+          const sharedBgImage =
+            document.getElementById("shared-bg-image") as HTMLElement | null;
 
-              // Obtener y establecer la imagen de fondo
-              const bgImage = column.getAttribute("data-bg-image");
-              if (bgImage && sharedBgImage) {
-                sharedBgImage.style.backgroundImage = `url('${bgImage}')`;
-                sharedBgImage.classList.remove("opacity-0");
-                sharedBgImage.classList.add("opacity-100");
-              }
+          let activeColumn: HTMLElement | null = null;
 
-              // Establecer como columna activa
-              activeColumn = column;
-            };
+          const activateColumn = (column: HTMLElement): void => {
+            if (activeColumn === column) return;
 
-            // Añadir event listeners para hover
-            columns.forEach((column) => {
-              column.addEventListener("mouseenter", () => {
-                activateColumn(column);
-              });
-
-              // Hacer clic también activa la columna (útil para tablets con touch)
-              column.addEventListener("click", () => {
-                if (window.innerWidth >= 768) {
-                  activateColumn(column);
-                }
-              });
+            columns.forEach((col) => {
+              col.classList.remove("border-amber-500");
+              const indicator = col.querySelector<HTMLElement>(".absolute.top-6");
+              indicator?.classList.remove("bg-amber-500", "border-amber-500");
             });
 
-            // Activar la primera columna por defecto
-            if (columns.length > 0) {
-              setTimeout(() => {
-                activateColumn(columns[0]);
-              }, 100);
+            column.classList.add("border-amber-500");
+            const currentIndicator =
+              column.querySelector<HTMLElement>(".absolute.top-6");
+            currentIndicator?.classList.add("bg-amber-500", "border-amber-500");
+
+            const bgImage = column.getAttribute("data-bg-image");
+            if (bgImage && sharedBgImage) {
+              sharedBgImage.style.backgroundImage = `url('${bgImage}')`;
+              sharedBgImage.classList.remove("opacity-0");
+              sharedBgImage.classList.add("opacity-100");
             }
+
+            activeColumn = column;
           };
 
-          // Inicializar solo en desktop
-          if (window.innerWidth >= 768) {
+          columns.forEach((column) => {
+            column.addEventListener("mouseenter", () => {
+              activateColumn(column);
+            });
+
+            column.addEventListener("click", () => {
+              if (window.innerWidth >= 768) {
+                activateColumn(column);
+              }
+            });
+          });
+
+          if (columns.length > 0) {
+            setTimeout(() => {
+              activateColumn(columns[0]);
+            }, 100);
+          }
+        };
+
+        /**
+         * Inicialización desktop
+         */
+        if (window.innerWidth >= 768) {
+          initDesktopHover();
+        }
+
+        /**
+         * Resize handler
+         */
+        window.addEventListener("resize", () => {
+          if (
+            window.innerWidth < 768 &&
+            !swiperInstance &&
+            typeof (window as any).Swiper !== "undefined"
+          ) {
+            swiperInstance = initSwiper();
+          } else if (window.innerWidth >= 768 && swiperInstance) {
+            swiperInstance.destroy(true, true);
+            swiperInstance = null;
             initDesktopHover();
           }
-
-          // Manejar cambios de tamaño de ventana
-          window.addEventListener("resize", () => {
-            // Si cambiamos a móvil y Swiper no está inicializado, inicializarlo
-            if (
-              window.innerWidth < 768 &&
-              !swiperInstance &&
-              typeof Swiper !== "undefined"
-            ) {
-              swiperInstance = initSwiper();
-            }
-            // Si cambiamos a desktop y Swiper está inicializado, destruirlo
-            else if (window.innerWidth >= 768 && swiperInstance) {
-              swiperInstance.destroy(true, true);
-              swiperInstance = null;
-              initDesktopHover();
-            }
-          });
         });
-      }
+      });
     </script>
 
     <!-- Galería Section -->
@@ -1018,6 +1014,9 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
         ></path>
       </svg>
     </a>
+
+        <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"
+    ></script>
 
     <script>
       // Smooth scroll para navegación
