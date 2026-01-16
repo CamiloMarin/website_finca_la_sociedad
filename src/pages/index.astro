@@ -2,155 +2,130 @@
 // Finca la Sociedad - Landing Page
 import "../styles/global.css";
 
-// import Swiper JS
-import Swiper from 'swiper';
-// import Swiper styles
-import 'swiper/css';
+// Layaot
+import Layout from "../Layaout/Layaout.astro";
+
+import { Swiper } from "swiper";
 
 const whatsappNumber = "573001234567"; // Reemplaza con tu número real
 const whatsappMessage = "Hola, me interesa reservar la Finca la Sociedad";
 const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 ---
 
-<!doctype html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Finca la Sociedad - Alquiler de Finca en Antioquia, Colombia</title>
-    <meta
-      name="description"
-      content="Alquiler de finca campestre para descanso y eventos en Antioquia. Piscina, zonas verdes, privacidad total. Capacidad hasta 15 personas."
-    />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
-    />
+<Layout title="Finca la Sociedad - Alquiler de Finca en Antioquia, Colombia">
+  <!-- Main Menu Section -->
 
-  </head>
-  <body class="bg-white">
-    <!-- Main Menu Section -->
-
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
-      <div
-        class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center"
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="#" class="text-2xl font-bold text-green-600">
+        Finca la Sociedad
+      </a>
+      <a
+        href={whatsappLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="bg-green-600 text-white px-5 py-2 rounded-full font-semibold hover:bg-green-700 transition-colors"
       >
-        <a href="#" class="text-2xl font-bold text-green-600">
-          Finca la Sociedad
-        </a>
-        <a
-          href={whatsappLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="bg-green-600 text-white px-5 py-2 rounded-full font-semibold hover:bg-green-700 transition-colors"
-        >
-          📱 Reservar por WhatsApp
-        </a>
-      </div>
-    </nav>
-    <!-- Hero Section -->
-    <section
-      class="relative h-screen flex items-center justify-center overflow-hidden"
-    >
-      <!-- Background Image -->
-      <div class="absolute inset-0 z-0">
-        <img
-          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80"
-          alt="Finca la Sociedad"
-          class="w-full h-full object-cover"
-        />
-        <div class="hero-gradient absolute inset-0"></div>
-      </div>
+        📱 Reservar por WhatsApp
+      </a>
+    </div>
+  </nav>
+  <!-- Hero Section -->
+  <section
+    class="relative h-screen flex items-center justify-center overflow-hidden"
+  >
+    <!-- Background Image -->
+    <div class="absolute inset-0 z-0">
+      <img
+        src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80"
+        alt="Finca la Sociedad"
+        class="w-full h-full object-cover"
+      />
+      <div class="hero-gradient absolute inset-0"></div>
+    </div>
 
-      <!-- Content -->
-      <div class="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
-        <h1 class="text-5xl md:text-7xl font-bold mb-6 drop-shadow-lg">
-          Finca la Sociedad
-        </h1>
-        <p class="text-2xl md:text-3xl mb-8 font-light">
-          Alquiler de finca campestre para descanso y eventos
+    <!-- Content -->
+    <div class="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
+      <h1 class="text-5xl md:text-7xl font-bold mb-6 drop-shadow-lg">
+        Finca la Sociedad
+      </h1>
+      <p class="text-2xl md:text-3xl mb-8 font-light">
+        Alquiler de finca campestre para descanso y eventos
+      </p>
+      <div class="space-y-4 mb-10">
+        <p class="text-xl md:text-2xl flex items-center justify-center gap-2">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+            <path
+              fill-rule="evenodd"
+              d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+              clip-rule="evenodd"></path>
+          </svg>
+          Antioquia, Colombia
         </p>
-        <div class="space-y-4 mb-10">
-          <p class="text-xl md:text-2xl flex items-center justify-center gap-2">
-            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-              <path
-                fill-rule="evenodd"
-                d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-                clip-rule="evenodd"></path>
-            </svg>
-            Antioquia, Colombia
-          </p>
-          <p class="text-xl md:text-2xl flex items-center justify-center gap-2">
-            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-              <path
-                d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"
-              ></path>
-            </svg>
-            Hasta 15 personas
-          </p>
-        </div>
-        <a
-          href={whatsappLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-block bg-white text-green-600 px-10 py-4 rounded-full text-xl font-semibold hover:bg-green-50 transition-all transform hover:scale-105 shadow-2xl"
-        >
-          📱 Reservar por WhatsApp
-        </a>
+        <p class="text-xl md:text-2xl flex items-center justify-center gap-2">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+            <path
+              d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"
+            ></path>
+          </svg>
+          Hasta 15 personas
+        </p>
       </div>
-
-      <!-- Scroll Indicator -->
-      <div
-        class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce"
+      <a
+        href={whatsappLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-block bg-white text-green-600 px-10 py-4 rounded-full text-xl font-semibold hover:bg-green-50 transition-all transform hover:scale-105 shadow-2xl"
       >
-        <svg
-          class="w-8 h-8 text-white"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-        </svg>
-      </div>
-    </section>
+        📱 Reservar por WhatsApp
+      </a>
+    </div>
 
-    <!-- ¿Qué ofrece? Section -->
-    <section
-      class="py-24 bg-white flex flex-row max-w-7xl centered mx-auto gap-10 px-4 md:px-0"
+    <!-- Scroll Indicator -->
+    <div
+      class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce"
     >
-      <div class="mx-auto px-4 md:w-2/3">
-        <!-- Header -->
-        <div class="max-w-3xl mb-20">
-          <h2
-            class="text-5xl md:text-6xl font-bold mb-6 text-gray-900 leading-tight"
-          >
-            Servicios que ofrecemos
-          </h2>
-          <p class="text-xl md:text-2xl text-gray-600 leading-relaxed">
-            Descubre todas las comodidades y servicios diseñados para hacer de
-            tu estadía una experiencia inolvidable. En Finca la Sociedad
-            encontrarás todo lo necesario para disfrutar al máximo.
-          </p>
-        </div>
+      <svg
+        class="w-8 h-8 text-white"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ¿Qué ofrece? Section -->
+  <section
+    class="py-24 bg-white flex flex-row max-w-7xl centered mx-auto gap-10 px-4 md:px-0"
+  >
+    <div class="mx-auto px-4 md:w-2/3">
+      <!-- Header -->
+      <div class="max-w-3xl mb-20">
+        <h2
+          class="text-5xl md:text-6xl font-bold mb-6 text-gray-900 leading-tight"
+        >
+          Servicios que ofrecemos
+        </h2>
+        <p class="text-xl md:text-2xl text-gray-600 leading-relaxed">
+          Descubre todas las comodidades y servicios diseñados para hacer de tu
+          estadía una experiencia inolvidable. En Finca la Sociedad encontrarás
+          todo lo necesario para disfrutar al máximo.
+        </p>
       </div>
-      <div class="md:w-1.5/4">
-        <img
-          src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80"
-          alt="Vista principal de la finca"
-          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 rounded-2xl"
-        />
-        <!-- <picture>
+    </div>
+    <div class="md:w-1.5/4">
+      <img
+        src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80"
+        alt="Vista principal de la finca"
+        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 rounded-2xl"
+      />
+      <!-- <picture>
           <source
             srcset="/images/banner_principal_mobil.webp"
             media="(max-width: 768px)"
@@ -162,901 +137,937 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
             fetchpriority="high"
           />
         </picture> -->
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Servicios Section -->
-    <section
-      class="py-24 bg-white flex flex-row max-w-7xl centered mx-auto gap-10 px-4 md:px-0"
-    >
-      <div class="mx-auto px-4">
-        <!-- Services Grid -->
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
-          <!-- Feature 1 - Capacidad -->
-          <div class="group">
-            <div
-              class="bg-linear-to-br from-green-50 to-green-100 rounded-3xl p-8 h-full transition-all duration-300 hover:shadow-xl"
-            >
-              <div
-                class="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-6 shadow-md group-hover:scale-105 transition-transform duration-300"
-              >
-                <svg
-                  class="w-10 h-10 text-green-600"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"
-                  ></path>
-                </svg>
-              </div>
-              <h3 class="text-2xl font-bold mb-3 text-gray-900">Capacidad</h3>
-              <p class="text-gray-600 text-lg leading-relaxed">
-                Hasta 15 personas cómodamente alojadas
-              </p>
-            </div>
-          </div>
-
-          <!-- Feature 2 - Piscina -->
-          <div class="group">
-            <div
-              class="bg-linear-to-br from-blue-50 to-blue-100 rounded-3xl p-8 h-full transition-all duration-300 hover:shadow-xl"
-            >
-              <div
-                class="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-6 shadow-md group-hover:scale-105 transition-transform duration-300"
-              >
-                <svg
-                  class="w-10 h-10 text-blue-600"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
-                    clip-rule="evenodd"></path>
-                </svg>
-              </div>
-              <h3 class="text-2xl font-bold mb-3 text-gray-900">Piscina</h3>
-              <p class="text-gray-600 text-lg leading-relaxed">
-                Piscina privada para tu máximo disfrute
-              </p>
-            </div>
-          </div>
-
-          <!-- Feature 3 - Zonas Verdes -->
-          <div class="group">
-            <div
-              class="bg-linear-to-br from-emerald-50 to-emerald-100 rounded-3xl p-8 h-full transition-all duration-300 hover:shadow-xl"
-            >
-              <div
-                class="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-6 shadow-md group-hover:scale-105 transition-transform duration-300"
-              >
-                <svg
-                  class="w-10 h-10 text-emerald-600"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M5 2a1 1 0 011 1v1h1a1 1 0 010 2H6v1a1 1 0 01-2 0V6H3a1 1 0 010-2h1V3a1 1 0 011-1zm0 10a1 1 0 011 1v1h1a1 1 0 110 2H6v1a1 1 0 11-2 0v-1H3a1 1 0 110-2h1v-1a1 1 0 011-1zM12 2a1 1 0 01.967.744L14.146 7.2 17.5 9.134a1 1 0 010 1.732l-3.354 1.935-1.18 4.455a1 1 0 01-1.933 0L9.854 12.8 6.5 10.866a1 1 0 010-1.732l3.354-1.935 1.18-4.455A1 1 0 0112 2z"
-                    clip-rule="evenodd"></path>
-                </svg>
-              </div>
-              <h3 class="text-2xl font-bold mb-3 text-gray-900">
-                Zonas Verdes
-              </h3>
-              <p class="text-gray-600 text-lg leading-relaxed">
-                Amplios espacios naturales al aire libre
-              </p>
-            </div>
-          </div>
-
-          <!-- Feature 4 - Parqueadero -->
-          <div class="group">
-            <div
-              class="bg-linear-to-br from-slate-50 to-slate-100 rounded-3xl p-8 h-full transition-all duration-300 hover:shadow-xl"
-            >
-              <div
-                class="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-6 shadow-md group-hover:scale-105 transition-transform duration-300"
-              >
-                <svg
-                  class="w-10 h-10 text-slate-600"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"
-                  ></path>
-                  <path
-                    d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707l-2-2A1 1 0 0015 7h-1z"
-                  ></path>
-                </svg>
-              </div>
-              <h3 class="text-2xl font-bold mb-3 text-gray-900">Parqueadero</h3>
-              <p class="text-gray-600 text-lg leading-relaxed">
-                Parqueo privado y totalmente seguro
-              </p>
-            </div>
-          </div>
-
-          <!-- Feature 5 - Privacidad -->
-          <div class="group">
-            <div
-              class="bg-linear-to-br from-purple-50 to-purple-100 rounded-3xl p-8 h-full transition-all duration-300 hover:shadow-xl"
-            >
-              <div
-                class="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-6 shadow-md group-hover:scale-105 transition-transform duration-300"
-              >
-                <svg
-                  class="w-10 h-10 text-purple-600"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
-                    clip-rule="evenodd"></path>
-                </svg>
-              </div>
-              <h3 class="text-2xl font-bold mb-3 text-gray-900">
-                Privacidad Total
-              </h3>
-              <p class="text-gray-600 text-lg leading-relaxed">
-                Espacio exclusivo y privado para ti
-              </p>
-            </div>
-          </div>
-
-          <!-- Feature 6 - Eventos -->
-          <div class="group">
-            <div
-              class="bg-linear-to-br from-amber-50 to-amber-100 rounded-3xl p-8 h-full transition-all duration-300 hover:shadow-xl"
-            >
-              <div
-                class="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-6 shadow-md group-hover:scale-105 transition-transform duration-300"
-              >
-                <svg
-                  class="w-10 h-10 text-amber-600"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"
-                  ></path>
-                </svg>
-              </div>
-              <h3 class="text-2xl font-bold mb-3 text-gray-900">Eventos</h3>
-              <p class="text-gray-600 text-lg leading-relaxed">
-                Perfecto para todo tipo de celebraciones
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Hover - Swiper Section -->
-    <section class="py-12 md:py-20 bg-gray-900">
-      <div class="container mx-auto px-4 md:px-8">
-        <!-- Contenedor principal - Desktop (3 columnas) / Mobile (Swiper) -->
-        <div class="relative">
-          <!-- Versión Desktop (3 columnas) -->
+  <!-- Servicios Section -->
+  <section
+    class="py-24 bg-white flex flex-row max-w-7xl centered mx-auto gap-10 px-4 md:px-0"
+  >
+    <div class="mx-auto px-4">
+      <!-- Services Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+        <!-- Feature 1 - Capacidad -->
+        <div class="group">
           <div
-            id="desktop-columns"
-            class="hidden md:grid md:grid-cols-3 gap-0 h-150"
-          >
-            <!-- Columna 1 - RESIDENTIAL -->
-            <div
-              id="col-residential"
-              class="relative overflow-hidden group h-full flex flex-col items-center justify-center p-8 transition-all duration-500 cursor-pointer border-r border-gray-700"
-              data-bg-image="https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-            >
-              <!-- Indicador de estado activo -->
-              <div
-                class="absolute top-6 right-6 w-4 h-4 rounded-full border-2 border-gray-300 group-hover:bg-amber-500 group-hover:border-amber-500 transition-colors duration-300 z-20"
-              >
-              </div>
-
-              <!-- Contenido -->
-              <div class="relative z-10 text-center">
-                <div class="skew-title mb-6 bg-black/70 px-6 py-2">
-                  <h2 class="text-3xl font-bold tracking-wider text-white">
-                    RESIDENTIAL
-                  </h2>
-                </div>
-                <p
-                  class="text-gray-200 opacity-0 group-hover:opacity-100 transition-opacity duration-500 max-w-xs"
-                >
-                  Propiedades diseñadas para vivir, con comodidades y espacios
-                  pensados para el hogar.
-                </p>
-              </div>
-
-              <!-- Overlay oscuro que se aclara en hover -->
-              <div
-                class="absolute inset-0 bg-black/70 group-hover:bg-black/40 transition-all duration-500 z-0"
-              >
-              </div>
-            </div>
-
-            <!-- Columna 2 - OFFICE -->
-            <div
-              id="col-office"
-              class="relative overflow-hidden group h-full flex flex-col items-center justify-center p-8 transition-all duration-500 cursor-pointer border-r border-gray-700"
-              data-bg-image="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
-            >
-              <!-- Indicador de estado activo -->
-              <div
-                class="absolute top-6 right-6 w-4 h-4 rounded-full border-2 border-gray-300 group-hover:bg-amber-500 group-hover:border-amber-500 transition-colors duration-300 z-20"
-              >
-              </div>
-
-              <!-- Contenido -->
-              <div class="relative z-10 text-center">
-                <div class="skew-title mb-6 bg-black/70 px-6 py-2">
-                  <h2 class="text-3xl font-bold tracking-wider text-white">
-                    OFFICE
-                  </h2>
-                </div>
-                <p
-                  class="text-gray-200 opacity-0 group-hover:opacity-100 transition-opacity duration-500 max-w-xs"
-                >
-                  Espacios profesionales optimizados para productividad y
-                  encuentros de negocios.
-                </p>
-              </div>
-
-              <!-- Overlay oscuro que se aclara en hover -->
-              <div
-                class="absolute inset-0 bg-black/70 group-hover:bg-black/40 transition-all duration-500 z-0"
-              >
-              </div>
-            </div>
-
-            <!-- Columna 3 - COMMERCIAL -->
-            <div
-              id="col-commercial"
-              class="relative overflow-hidden group h-full flex flex-col items-center justify-center p-8 transition-all duration-500 cursor-pointer"
-              data-bg-image="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-            >
-              <!-- Indicador de estado activo -->
-              <div
-                class="absolute top-6 right-6 w-4 h-4 rounded-full border-2 border-gray-300 group-hover:bg-amber-500 group-hover:border-amber-500 transition-colors duration-300 z-20"
-              >
-              </div>
-
-              <!-- Contenido -->
-              <div class="relative z-10 text-center">
-                <div class="skew-title mb-6 bg-black/70 px-6 py-2">
-                  <h2 class="text-3xl font-bold tracking-wider text-white">
-                    COMMERCIAL
-                  </h2>
-                </div>
-                <p
-                  class="text-gray-200 opacity-0 group-hover:opacity-100 transition-opacity duration-500 max-w-xs"
-                >
-                  Establecimientos comerciales ideales para retail, restaurantes
-                  y negocios al público.
-                </p>
-              </div>
-
-              <!-- Overlay oscuro que se aclara en hover -->
-              <div
-                class="absolute inset-0 bg-black/70 group-hover:bg-black/40 transition-all duration-500 z-0"
-              >
-              </div>
-            </div>
-          </div>
-
-          <!-- Versión Mobile (Swiper) -->
-          <div id="mobile-slider" class="md:hidden">
-            <div class="swiper-container h-150 rounded-xl overflow-hidden">
-              <div class="swiper-wrapper">
-                <!-- Slide 1 - RESIDENTIAL -->
-                <div class="swiper-slide">
-                  <div
-                    class="relative h-full w-full flex flex-col items-center justify-center p-6 bg-cover bg-center bg-transition"
-                    style="background-image: url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');"
-                  >
-                    <div class="absolute inset-0 bg-black/50"></div>
-                    <div class="relative z-10 text-center">
-                      <div class="skew-title mb-6 bg-black/70 px-6 py-2">
-                        <h2
-                          class="text-3xl font-bold tracking-wider text-white"
-                        >
-                          RESIDENTIAL
-                        </h2>
-                      </div>
-                      <p class="text-gray-200 max-w-xs">
-                        Propiedades diseñadas para vivir, con comodidades y
-                        espacios pensados para el hogar.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Slide 2 - OFFICE -->
-                <div class="swiper-slide">
-                  <div
-                    class="relative h-full w-full flex flex-col items-center justify-center p-6 bg-cover bg-center bg-transition"
-                    style="background-image: url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80');"
-                  >
-                    <div class="absolute inset-0 bg-black/50"></div>
-                    <div class="relative z-10 text-center">
-                      <div class="skew-title mb-6 bg-black/70 px-6 py-2">
-                        <h2
-                          class="text-3xl font-bold tracking-wider text-white"
-                        >
-                          OFFICE
-                        </h2>
-                      </div>
-                      <p class="text-gray-200 max-w-xs">
-                        Espacios profesionales optimizados para productividad y
-                        encuentros de negocios.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Slide 3 - COMMERCIAL -->
-                <div class="swiper-slide">
-                  <div
-                    class="relative h-full w-full flex flex-col items-center justify-center p-6 bg-cover bg-center bg-transition"
-                    style="background-image: url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');"
-                  >
-                    <div class="absolute inset-0 bg-black/50"></div>
-                    <div class="relative z-10 text-center">
-                      <div class="skew-title mb-6 bg-black/70 px-6 py-2">
-                        <h2
-                          class="text-3xl font-bold tracking-wider text-white"
-                        >
-                          COMMERCIAL
-                        </h2>
-                      </div>
-                      <p class="text-gray-200 max-w-xs">
-                        Establecimientos comerciales ideales para retail,
-                        restaurantes y negocios al público.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Paginación -->
-              <div class="swiper-pagination bottom-4!"></div>
-
-              <!-- Navegación -->
-              <div class="swiper-button-next text-amber-500! right-4!"></div>
-              <div class="swiper-button-prev text-amber-500! left-4!"></div>
-            </div>
-          </div>
-
-          <!-- Contenedor para imagen de fondo compartida (solo desktop) -->
-          <div
-            id="shared-bg-container"
-            class="hidden md:block absolute inset-0 -z-10 overflow-hidden rounded-xl"
+            class="bg-linear-to-br from-green-50 to-green-100 rounded-3xl p-8 h-full transition-all duration-300 hover:shadow-xl"
           >
             <div
-              id="shared-bg-image"
-              class="absolute inset-0 bg-cover bg-center bg-transition opacity-0 transition-opacity duration-500"
+              class="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-6 shadow-md group-hover:scale-105 transition-transform duration-300"
             >
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Script para funcionalidad -->
-    <script>
-      // Esperar a que el DOM esté listo
-      document.addEventListener("DOMContentLoaded", () => {
-        let swiperInstance: any | null = null;
-
-        /**
-         * Inicializa Swiper (solo mobile)
-         */
-        const initSwiper = (): any | null => {
-          if (typeof (window as any).Swiper !== "undefined") {
-            return new (window as any).Swiper(".swiper-container", {
-              direction: "horizontal",
-              loop: false,
-              slidesPerView: 1,
-              spaceBetween: 0,
-              centeredSlides: true,
-              pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-              },
-              navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-              },
-              autoplay: {
-                delay: 5000,
-                disableOnInteraction: false,
-              },
-            });
-          }
-          return null;
-        };
-
-        /**
-         * Carga Swiper desde CDN si no existe
-         */
-        const loadSwiperFromCDN = (callback: () => void): void => {
-          const link = document.createElement("link");
-          link.rel = "stylesheet";
-          link.href =
-            "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css";
-          document.head.appendChild(link);
-
-          const script = document.createElement("script");
-          script.src =
-            "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js";
-          script.onload = callback;
-          document.head.appendChild(script);
-        };
-
-        /**
-         * Inicialización mobile
-         */
-        if (window.innerWidth < 768) {
-          if (typeof (window as any).Swiper === "undefined") {
-            loadSwiperFromCDN(() => {
-              swiperInstance = initSwiper();
-            });
-          } else {
-            swiperInstance = initSwiper();
-          }
-        }
-
-        /**
-         * Hover desktop
-         */
-        const initDesktopHover = (): void => {
-          const columns = document.querySelectorAll<HTMLElement>(
-            "#desktop-columns > div"
-          );
-
-          const sharedBgImage =
-            document.getElementById("shared-bg-image") as HTMLElement | null;
-
-          let activeColumn: HTMLElement | null = null;
-
-          const activateColumn = (column: HTMLElement): void => {
-            if (activeColumn === column) return;
-
-            columns.forEach((col) => {
-              col.classList.remove("border-amber-500");
-              const indicator = col.querySelector<HTMLElement>(".absolute.top-6");
-              indicator?.classList.remove("bg-amber-500", "border-amber-500");
-            });
-
-            column.classList.add("border-amber-500");
-            const currentIndicator =
-              column.querySelector<HTMLElement>(".absolute.top-6");
-            currentIndicator?.classList.add("bg-amber-500", "border-amber-500");
-
-            const bgImage = column.getAttribute("data-bg-image");
-            if (bgImage && sharedBgImage) {
-              sharedBgImage.style.backgroundImage = `url('${bgImage}')`;
-              sharedBgImage.classList.remove("opacity-0");
-              sharedBgImage.classList.add("opacity-100");
-            }
-
-            activeColumn = column;
-          };
-
-          columns.forEach((column) => {
-            column.addEventListener("mouseenter", () => {
-              activateColumn(column);
-            });
-
-            column.addEventListener("click", () => {
-              if (window.innerWidth >= 768) {
-                activateColumn(column);
-              }
-            });
-          });
-
-          if (columns.length > 0) {
-            setTimeout(() => {
-              activateColumn(columns[0]);
-            }, 100);
-          }
-        };
-
-        /**
-         * Inicialización desktop
-         */
-        if (window.innerWidth >= 768) {
-          initDesktopHover();
-        }
-
-        /**
-         * Resize handler
-         */
-        window.addEventListener("resize", () => {
-          if (
-            window.innerWidth < 768 &&
-            !swiperInstance &&
-            typeof (window as any).Swiper !== "undefined"
-          ) {
-            swiperInstance = initSwiper();
-          } else if (window.innerWidth >= 768 && swiperInstance) {
-            swiperInstance.destroy(true, true);
-            swiperInstance = null;
-            initDesktopHover();
-          }
-        });
-      });
-    </script>
-
-    <!-- Galería Section -->
-    <section class="py-20 bg-white">
-      <div class="max-w-7xl mx-auto px-4">
-        <h2
-          class="text-4xl md:text-5xl font-bold text-center mb-4 text-gray-800"
-        >
-          Conoce la finca
-        </h2>
-        <p class="text-center text-xl text-gray-600 mb-16">
-          Un vistazo a tu próximo destino de descanso
-        </p>
-
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <!-- Foto 1 - Grande -->
-          <div
-            class="md:col-span-2 lg:row-span-2 overflow-hidden rounded-2xl shadow-lg group"
-          >
-            <img
-              src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80"
-              alt="Vista principal de la finca"
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-            />
-          </div>
-
-          <!-- Foto 2 -->
-          <div class="overflow-hidden rounded-2xl shadow-lg group">
-            <img
-              src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80"
-              alt="Piscina"
-              class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-            />
-          </div>
-
-          <!-- Foto 3 -->
-          <div class="overflow-hidden rounded-2xl shadow-lg group">
-            <img
-              src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80"
-              alt="Zona social"
-              class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-            />
-          </div>
-
-          <!-- Foto 4 -->
-          <div class="overflow-hidden rounded-2xl shadow-lg group">
-            <img
-              src="https://images.unsplash.com/photo-1602941525421-8f8b81d3edbb?w=800&q=80"
-              alt="Habitación"
-              class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-            />
-          </div>
-
-          <!-- Foto 5 -->
-          <div class="overflow-hidden rounded-2xl shadow-lg group">
-            <img
-              src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80"
-              alt="Zonas verdes"
-              class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-            />
-          </div>
-
-          <!-- Foto 6 -->
-          <div class="overflow-hidden rounded-2xl shadow-lg group">
-            <img
-              src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80"
-              alt="Exterior de la finca"
-              class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Ubicación Section -->
-    <section class="py-20 bg-gray-50">
-      <div class="max-w-6xl mx-auto px-4">
-        <h2
-          class="text-4xl md:text-5xl font-bold text-center mb-4 text-gray-800"
-        >
-          Ubicación
-        </h2>
-        <p class="text-center text-xl text-gray-600 mb-12">
-          Fácil acceso y cerca de todo
-        </p>
-
-        <div class="grid md:grid-cols-2 gap-12 items-center">
-          <div class="space-y-6">
-            <div class="flex items-start gap-4">
-              <div
-                class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center shrink-0"
-              >
-                <svg
-                  class="w-6 h-6 text-green-600"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-                    clip-rule="evenodd"></path>
-                </svg>
-              </div>
-              <div>
-                <h3 class="text-2xl font-bold mb-2 text-gray-800">
-                  Antioquia, Colombia
-                </h3>
-                <p class="text-gray-600 text-lg">
-                  Ubicada en zona rural con fácil acceso desde las principales
-                  vías
-                </p>
-              </div>
-            </div>
-
-            <div class="flex items-start gap-4">
-              <div
-                class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center shrink-0"
-              >
-                <svg
-                  class="w-6 h-6 text-blue-600"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
-                    clip-rule="evenodd"></path>
-                </svg>
-              </div>
-              <div>
-                <h3 class="text-2xl font-bold mb-2 text-gray-800">
-                  Cerca de ti
-                </h3>
-                <p class="text-gray-600 text-lg">
-                  A pocos minutos de los principales centros urbanos de
-                  Antioquia
-                </p>
-              </div>
-            </div>
-
-            <div
-              class="bg-green-50 border-l-4 border-green-500 p-6 rounded-r-lg"
-            >
-              <p class="text-gray-700 text-lg">
-                <span class="font-bold">📍 ¿Cómo llegar?</span><br />
-                Escríbenos por WhatsApp y te enviaremos la ubicación exacta
-              </p>
-            </div>
-          </div>
-
-          <div class="rounded-2xl overflow-hidden shadow-xl h-96">
-            <!-- Reemplaza con las coordenadas reales de tu finca -->
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6666.148261047867!2d-75.83286658810798!3d6.557557243337441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e45b743c2b3f645%3A0x3bd55cf8a74728ad!2sFinca%20La%20Sociedad!5e0!3m2!1ses-419!2sco!4v1768273657242!5m2!1ses-419!2sco"
-              width="100%"
-              height="100%"
-              style="border:0;"
-              allowfullscreen=""
-              loading="lazy"
-              title="Ubicación Finca la Sociedad"
-            >
-            </iframe>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Precios Section -->
-    <section class="py-20 bg-white">
-      <div class="max-w-4xl mx-auto px-4 text-center">
-        <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-800">
-          Precios y Reservas
-        </h2>
-        <p class="text-xl text-gray-600 mb-12">
-          Tarifas accesibles para tu descanso perfecto
-        </p>
-
-        <div
-          class="bg-linear-to-br from-green-50 to-green-100 rounded-3xl p-10 shadow-xl border-2 border-green-200"
-        >
-          <div class="mb-8">
-            <p class="text-gray-600 text-xl mb-4">Desde</p>
-            <p class="text-6xl font-bold text-green-600 mb-2">$XXX,XXX</p>
-            <p class="text-gray-600 text-xl">por noche</p>
-          </div>
-
-          <div class="space-y-4 mb-8 text-left max-w-md mx-auto">
-            <div class="flex items-center gap-3">
               <svg
-                class="w-6 h-6 text-green-600 shrink-0"
+                class="w-10 h-10 text-green-600"
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >
                 <path
-                  fill-rule="evenodd"
-                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <span class="text-gray-700 text-lg"
-                >Tarifas especiales para fines de semana y puentes</span
-              >
-            </div>
-            <div class="flex items-center gap-3">
-              <svg
-                class="w-6 h-6 text-green-600 shrink-0"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <span class="text-gray-700 text-lg"
-                >Descuentos por reservas de varios días</span
-              >
-            </div>
-            <div class="flex items-center gap-3">
-              <svg
-                class="w-6 h-6 text-green-600 shrink-0"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <span class="text-gray-700 text-lg"
-                >Flexibilidad en el número de personas</span
-              >
-            </div>
-          </div>
-
-          <div class="bg-white rounded-2xl p-6 shadow-md">
-            <p class="text-gray-700 text-lg mb-4">
-              <strong>📱 Consulta disponibilidad y precios exactos</strong>
-            </p>
-            <p class="text-gray-600">
-              Escríbenos por WhatsApp para confirmar fechas y obtener una
-              cotización personalizada
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA Final Section -->
-    <section
-      class="py-20 bg-linear-to-br from-green-600 to-green-700 text-white"
-    >
-      <div class="max-w-4xl mx-auto px-4 text-center">
-        <h2 class="text-4xl md:text-5xl font-bold mb-6">
-          ¿Listo para descansar?
-        </h2>
-        <p class="text-xl md:text-2xl mb-10 opacity-90">
-          Reserva ahora y vive una experiencia inolvidable en Finca la Sociedad
-        </p>
-        <a
-          href={whatsappLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-block bg-white text-green-600 px-12 py-5 rounded-full text-2xl font-bold hover:bg-green-50 transition-all transform hover:scale-105 shadow-2xl"
-        >
-          💬 Hablar por WhatsApp
-        </a>
-        <p class="mt-8 text-lg opacity-80">
-          Respuesta rápida garantizada • Reserva fácil y segura
-        </p>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white pt-15 pb-5">
-      <div class="max-w-6xl mx-auto px-4 flex flex-row">
-        <div class="mb-6 w-1/2 text-left">
-          <h3 class="text-3xl font-bold mb-4">Finca la Sociedad</h3>
-          <p class="text-gray-400 mb-6 font-bold">Antioquia, Colombia</p>
-          <p class="text-gray-500 mb-6">
-            En el corazón de Santa Fe de Antioquia, donde el sol calienta
-            despacio y el tiempo parece ir más lento, nace Finca La Sociedad. Un
-            lugar rodeado de naturaleza y calma, pensado para descansar,
-            compartir y desconectarse del ruido. Aquí, cada día invita a
-            disfrutar del paisaje, del silencio y del encanto sencillo de la
-            vida en el campo.
-          </p>
-        </div>
-        <div class="w-1/2">
-          <div class="flex justify-center gap-6 mb-8">
-            <a
-              href={whatsappLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="hover:text-green-400 transition-colors"
-            >
-              <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-                <path
-                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+                  d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"
                 ></path>
               </svg>
-            </a>
+            </div>
+            <h3 class="text-2xl font-bold mb-3 text-gray-900">Capacidad</h3>
+            <p class="text-gray-600 text-lg leading-relaxed">
+              Hasta 15 personas cómodamente alojadas
+            </p>
+          </div>
+        </div>
+
+        <!-- Feature 2 - Piscina -->
+        <div class="group">
+          <div
+            class="bg-linear-to-br from-blue-50 to-blue-100 rounded-3xl p-8 h-full transition-all duration-300 hover:shadow-xl"
+          >
+            <div
+              class="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-6 shadow-md group-hover:scale-105 transition-transform duration-300"
+            >
+              <svg
+                class="w-10 h-10 text-blue-600"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-3 text-gray-900">Piscina</h3>
+            <p class="text-gray-600 text-lg leading-relaxed">
+              Piscina privada para tu máximo disfrute
+            </p>
+          </div>
+        </div>
+
+        <!-- Feature 3 - Zonas Verdes -->
+        <div class="group">
+          <div
+            class="bg-linear-to-br from-emerald-50 to-emerald-100 rounded-3xl p-8 h-full transition-all duration-300 hover:shadow-xl"
+          >
+            <div
+              class="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-6 shadow-md group-hover:scale-105 transition-transform duration-300"
+            >
+              <svg
+                class="w-10 h-10 text-emerald-600"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M5 2a1 1 0 011 1v1h1a1 1 0 010 2H6v1a1 1 0 01-2 0V6H3a1 1 0 010-2h1V3a1 1 0 011-1zm0 10a1 1 0 011 1v1h1a1 1 0 110 2H6v1a1 1 0 11-2 0v-1H3a1 1 0 110-2h1v-1a1 1 0 011-1zM12 2a1 1 0 01.967.744L14.146 7.2 17.5 9.134a1 1 0 010 1.732l-3.354 1.935-1.18 4.455a1 1 0 01-1.933 0L9.854 12.8 6.5 10.866a1 1 0 010-1.732l3.354-1.935 1.18-4.455A1 1 0 0112 2z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-3 text-gray-900">Zonas Verdes</h3>
+            <p class="text-gray-600 text-lg leading-relaxed">
+              Amplios espacios naturales al aire libre
+            </p>
+          </div>
+        </div>
+
+        <!-- Feature 4 - Parqueadero -->
+        <div class="group">
+          <div
+            class="bg-linear-to-br from-slate-50 to-slate-100 rounded-3xl p-8 h-full transition-all duration-300 hover:shadow-xl"
+          >
+            <div
+              class="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-6 shadow-md group-hover:scale-105 transition-transform duration-300"
+            >
+              <svg
+                class="w-10 h-10 text-slate-600"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"
+                ></path>
+                <path
+                  d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707l-2-2A1 1 0 0015 7h-1z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-3 text-gray-900">Parqueadero</h3>
+            <p class="text-gray-600 text-lg leading-relaxed">
+              Parqueo privado y totalmente seguro
+            </p>
+          </div>
+        </div>
+
+        <!-- Feature 5 - Privacidad -->
+        <div class="group">
+          <div
+            class="bg-linear-to-br from-purple-50 to-purple-100 rounded-3xl p-8 h-full transition-all duration-300 hover:shadow-xl"
+          >
+            <div
+              class="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-6 shadow-md group-hover:scale-105 transition-transform duration-300"
+            >
+              <svg
+                class="w-10 h-10 text-purple-600"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-3 text-gray-900">
+              Privacidad Total
+            </h3>
+            <p class="text-gray-600 text-lg leading-relaxed">
+              Espacio exclusivo y privado para ti
+            </p>
+          </div>
+        </div>
+
+        <!-- Feature 6 - Eventos -->
+        <div class="group">
+          <div
+            class="bg-linear-to-br from-amber-50 to-amber-100 rounded-3xl p-8 h-full transition-all duration-300 hover:shadow-xl"
+          >
+            <div
+              class="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-6 shadow-md group-hover:scale-105 transition-transform duration-300"
+            >
+              <svg
+                class="w-10 h-10 text-amber-600"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-3 text-gray-900">Eventos</h3>
+            <p class="text-gray-600 text-lg leading-relaxed">
+              Perfecto para todo tipo de celebraciones
+            </p>
           </div>
         </div>
       </div>
-      <hr class="text-gray-800 pt-4" />
-      <p class="text-gray-600 text-sm text-center">
-        © 2026 Finca la Sociedad. Todos los derechos reservados.
-      </p>
-    </footer>
+    </div>
+  </section>
 
-    <!-- Botón flotante de WhatsApp -->
-    <a
-      href={whatsappLink}
-      target="_blank"
-      rel="noopener noreferrer"
-      class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 transition-all transform hover:scale-110 z-50 animate-pulse"
-      aria-label="Contactar por WhatsApp"
-    >
-      <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-        <path
-          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
-        ></path>
-      </svg>
-    </a>
+  <!-- Hover - Swiper Section -->
+  <section class="py-12 md:py-20 bg-gray-900">
+    <div class="container mx-auto px-4 md:px-8">
+      <!-- Contenedor principal - Desktop (3 columnas) / Mobile (Swiper) -->
+      <div class="relative">
+        <!-- Versión Desktop (3 columnas) -->
+        <div
+          id="desktop-columns"
+          class="hidden md:grid md:grid-cols-3 gap-0 h-150"
+        >
+          <!-- Columna 1 - RESIDENTIAL -->
+          <div
+            id="col-residential"
+            class="relative overflow-hidden group h-full flex flex-col items-center justify-center p-8 transition-all duration-500 cursor-pointer border-r border-gray-700"
+            data-bg-image="https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+          >
+            <!-- Indicador de estado activo -->
+            <div
+              class="absolute top-6 right-6 w-4 h-4 rounded-full border-2 border-gray-300 group-hover:bg-amber-500 group-hover:border-amber-500 transition-colors duration-300 z-20"
+            >
+            </div>
 
-        <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"
-    ></script>
+            <!-- Contenido -->
+            <div class="relative z-10 text-center">
+              <div class="skew-title mb-6 bg-black/70 px-6 py-2">
+                <h2 class="text-3xl font-bold tracking-wider text-white">
+                  RESIDENTIAL
+                </h2>
+              </div>
+              <p
+                class="text-gray-200 opacity-0 group-hover:opacity-100 transition-opacity duration-500 max-w-xs"
+              >
+                Propiedades diseñadas para vivir, con comodidades y espacios
+                pensados para el hogar.
+              </p>
+            </div>
 
-    <script>
-      // Smooth scroll para navegación
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          const href = anchor.getAttribute("href");
-          const target = href ? document.querySelector(href) : null;
+            <!-- Overlay oscuro que se aclara en hover -->
+            <div
+              class="absolute inset-0 bg-black/70 group-hover:bg-black/40 transition-all duration-500 z-0"
+            >
+            </div>
+          </div>
 
-          if (target) {
-            target.scrollIntoView({
-              behavior: "smooth",
-              block: "start",
-            });
-          }
-        });
-      });
+          <!-- Columna 2 - OFFICE -->
+          <div
+            id="col-office"
+            class="relative overflow-hidden group h-full flex flex-col items-center justify-center p-8 transition-all duration-500 cursor-pointer border-r border-gray-700"
+            data-bg-image="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+          >
+            <!-- Indicador de estado activo -->
+            <div
+              class="absolute top-6 right-6 w-4 h-4 rounded-full border-2 border-gray-300 group-hover:bg-amber-500 group-hover:border-amber-500 transition-colors duration-300 z-20"
+            >
+            </div>
 
-      // Animación de fade-in al hacer scroll
-      const observerOptions = {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px",
+            <!-- Contenido -->
+            <div class="relative z-10 text-center">
+              <div class="skew-title mb-6 bg-black/70 px-6 py-2">
+                <h2 class="text-3xl font-bold tracking-wider text-white">
+                  OFFICE
+                </h2>
+              </div>
+              <p
+                class="text-gray-200 opacity-0 group-hover:opacity-100 transition-opacity duration-500 max-w-xs"
+              >
+                Espacios profesionales optimizados para productividad y
+                encuentros de negocios.
+              </p>
+            </div>
+
+            <!-- Overlay oscuro que se aclara en hover -->
+            <div
+              class="absolute inset-0 bg-black/70 group-hover:bg-black/40 transition-all duration-500 z-0"
+            >
+            </div>
+          </div>
+
+          <!-- Columna 3 - COMMERCIAL -->
+          <div
+            id="col-commercial"
+            class="relative overflow-hidden group h-full flex flex-col items-center justify-center p-8 transition-all duration-500 cursor-pointer"
+            data-bg-image="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+          >
+            <!-- Indicador de estado activo -->
+            <div
+              class="absolute top-6 right-6 w-4 h-4 rounded-full border-2 border-gray-300 group-hover:bg-amber-500 group-hover:border-amber-500 transition-colors duration-300 z-20"
+            >
+            </div>
+
+            <!-- Contenido -->
+            <div class="relative z-10 text-center">
+              <div class="skew-title mb-6 bg-black/70 px-6 py-2">
+                <h2 class="text-3xl font-bold tracking-wider text-white">
+                  COMMERCIAL
+                </h2>
+              </div>
+              <p
+                class="text-gray-200 opacity-0 group-hover:opacity-100 transition-opacity duration-500 max-w-xs"
+              >
+                Establecimientos comerciales ideales para retail, restaurantes y
+                negocios al público.
+              </p>
+            </div>
+
+            <!-- Overlay oscuro que se aclara en hover -->
+            <div
+              class="absolute inset-0 bg-black/70 group-hover:bg-black/40 transition-all duration-500 z-0"
+            >
+            </div>
+          </div>
+        </div>
+
+        <!-- Versión Mobile (Swiper) -->
+        <div id="mobile-slider" class="md:hidden">
+          <div class="swiper-container h-150 rounded-xl overflow-hidden">
+            <div class="swiper-wrapper">
+              <!-- Slide 1 - RESIDENTIAL -->
+              <div class="swiper-slide">
+                <div
+                  class="relative h-full w-full flex flex-col items-center justify-center p-6 bg-cover bg-center bg-transition"
+                  style="background-image: url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');"
+                >
+                  <div class="absolute inset-0 bg-black/50"></div>
+                  <div class="relative z-10 text-center">
+                    <div class="skew-title mb-6 bg-black/70 px-6 py-2">
+                      <h2 class="text-3xl font-bold tracking-wider text-white">
+                        RESIDENTIAL
+                      </h2>
+                    </div>
+                    <p class="text-gray-200 max-w-xs">
+                      Propiedades diseñadas para vivir, con comodidades y
+                      espacios pensados para el hogar.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 2 - OFFICE -->
+              <div class="swiper-slide">
+                <div
+                  class="relative h-full w-full flex flex-col items-center justify-center p-6 bg-cover bg-center bg-transition"
+                  style="background-image: url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80');"
+                >
+                  <div class="absolute inset-0 bg-black/50"></div>
+                  <div class="relative z-10 text-center">
+                    <div class="skew-title mb-6 bg-black/70 px-6 py-2">
+                      <h2 class="text-3xl font-bold tracking-wider text-white">
+                        OFFICE
+                      </h2>
+                    </div>
+                    <p class="text-gray-200 max-w-xs">
+                      Espacios profesionales optimizados para productividad y
+                      encuentros de negocios.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 3 - COMMERCIAL -->
+              <div class="swiper-slide">
+                <div
+                  class="relative h-full w-full flex flex-col items-center justify-center p-6 bg-cover bg-center bg-transition"
+                  style="background-image: url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');"
+                >
+                  <div class="absolute inset-0 bg-black/50"></div>
+                  <div class="relative z-10 text-center">
+                    <div class="skew-title mb-6 bg-black/70 px-6 py-2">
+                      <h2 class="text-3xl font-bold tracking-wider text-white">
+                        COMMERCIAL
+                      </h2>
+                    </div>
+                    <p class="text-gray-200 max-w-xs">
+                      Establecimientos comerciales ideales para retail,
+                      restaurantes y negocios al público.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Paginación -->
+            <div class="swiper-pagination bottom-4!"></div>
+
+            <!-- Navegación -->
+            <div class="swiper-button-next text-amber-500! right-4!"></div>
+            <div class="swiper-button-prev text-amber-500! left-4!"></div>
+          </div>
+        </div>
+
+        <!-- Contenedor para imagen de fondo compartida (solo desktop) -->
+        <div
+          id="shared-bg-container"
+          class="hidden md:block absolute inset-0 -z-10 overflow-hidden rounded-xl"
+        >
+          <div
+            id="shared-bg-image"
+            class="absolute inset-0 bg-cover bg-center bg-transition opacity-0 transition-opacity duration-500"
+          >
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Script para funcionalidad -->
+  <script>
+    // Esperar a que el DOM esté listo
+    document.addEventListener("DOMContentLoaded", () => {
+      let swiperInstance: any | null = null;
+
+      /**
+       * Inicializa Swiper (solo mobile)
+       */
+      const initSwiper = (): any | null => {
+        if (typeof (window as any).Swiper !== "undefined") {
+          return new (window as any).Swiper(".swiper-container", {
+            direction: "horizontal",
+            loop: false,
+            slidesPerView: 1,
+            spaceBetween: 0,
+            centeredSlides: true,
+            pagination: {
+              el: ".swiper-pagination",
+              clickable: true,
+            },
+            navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            },
+            autoplay: {
+              delay: 5000,
+              disableOnInteraction: false,
+            },
+          });
+        }
+        return null;
       };
 
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const entryTarget = entry.target as HTMLElement;
-            entryTarget.style.opacity = "1";
-            entryTarget.style.transform = "translateY(0)";
-          }
-        });
-      }, observerOptions);
+      /**
+       * Carga Swiper desde CDN si no existe
+       */
+      const loadSwiperFromCDN = (callback: () => void): void => {
+        const link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.href =
+          "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css";
+        document.head.appendChild(link);
 
-      document.querySelectorAll("section").forEach((section) => {
-        section.style.opacity = "0";
-        section.style.transform = "translateY(20px)";
-        section.style.transition = "opacity 0.6s ease, transform 0.6s ease";
-        observer.observe(section);
+        const script = document.createElement("script");
+        script.src =
+          "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js";
+        script.onload = callback;
+        document.head.appendChild(script);
+      };
+
+      /**
+       * Inicialización mobile
+       */
+      if (window.innerWidth < 768) {
+        if (typeof (window as any).Swiper === "undefined") {
+          loadSwiperFromCDN(() => {
+            swiperInstance = initSwiper();
+          });
+        } else {
+          swiperInstance = initSwiper();
+        }
+      }
+
+      /**
+       * Hover desktop
+       */
+      const initDesktopHover = (): void => {
+        const columns = document.querySelectorAll<HTMLElement>(
+          "#desktop-columns > div"
+        );
+
+        const sharedBgImage = document.getElementById(
+          "shared-bg-image"
+        ) as HTMLElement | null;
+
+        let activeColumn: HTMLElement | null = null;
+
+        const activateColumn = (column: HTMLElement): void => {
+          if (activeColumn === column) return;
+
+          columns.forEach((col) => {
+            col.classList.remove("border-amber-500");
+            const indicator = col.querySelector<HTMLElement>(".absolute.top-6");
+            indicator?.classList.remove("bg-amber-500", "border-amber-500");
+          });
+
+          column.classList.add("border-amber-500");
+          const currentIndicator =
+            column.querySelector<HTMLElement>(".absolute.top-6");
+          currentIndicator?.classList.add("bg-amber-500", "border-amber-500");
+
+          const bgImage = column.getAttribute("data-bg-image");
+          if (bgImage && sharedBgImage) {
+            sharedBgImage.style.backgroundImage = `url('${bgImage}')`;
+            sharedBgImage.classList.remove("opacity-0");
+            sharedBgImage.classList.add("opacity-100");
+          }
+
+          activeColumn = column;
+        };
+
+        columns.forEach((column) => {
+          column.addEventListener("mouseenter", () => {
+            activateColumn(column);
+          });
+
+          column.addEventListener("click", () => {
+            if (window.innerWidth >= 768) {
+              activateColumn(column);
+            }
+          });
+        });
+
+        if (columns.length > 0) {
+          setTimeout(() => {
+            activateColumn(columns[0]);
+          }, 100);
+        }
+      };
+
+      /**
+       * Inicialización desktop
+       */
+      if (window.innerWidth >= 768) {
+        initDesktopHover();
+      }
+
+      /**
+       * Resize handler
+       */
+      window.addEventListener("resize", () => {
+        if (
+          window.innerWidth < 768 &&
+          !swiperInstance &&
+          typeof (window as any).Swiper !== "undefined"
+        ) {
+          swiperInstance = initSwiper();
+        } else if (window.innerWidth >= 768 && swiperInstance) {
+          swiperInstance.destroy(true, true);
+          swiperInstance = null;
+          initDesktopHover();
+        }
       });
-    </script>
-  </body>
-</html>
+    });
+  </script>
+
+  <!-- Galería Section -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 text-gray-800">
+        Conoce la finca
+      </h2>
+      <p class="text-center text-xl text-gray-600 mb-16">
+        Un vistazo a tu próximo destino de descanso
+      </p>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Foto 1 - Grande -->
+        <div
+          class="md:col-span-2 lg:row-span-2 overflow-hidden rounded-2xl shadow-lg group"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80"
+            alt="Vista principal de la finca"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+          />
+        </div>
+
+        <!-- Foto 2 -->
+        <div class="overflow-hidden rounded-2xl shadow-lg group">
+          <img
+            src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80"
+            alt="Piscina"
+            class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+          />
+        </div>
+
+        <!-- Foto 3 -->
+        <div class="overflow-hidden rounded-2xl shadow-lg group">
+          <img
+            src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80"
+            alt="Zona social"
+            class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+          />
+        </div>
+
+        <!-- Foto 4 -->
+        <div class="overflow-hidden rounded-2xl shadow-lg group">
+          <img
+            src="https://images.unsplash.com/photo-1602941525421-8f8b81d3edbb?w=800&q=80"
+            alt="Habitación"
+            class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+          />
+        </div>
+
+        <!-- Foto 5 -->
+        <div class="overflow-hidden rounded-2xl shadow-lg group">
+          <img
+            src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80"
+            alt="Zonas verdes"
+            class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+          />
+        </div>
+
+        <!-- Foto 6 -->
+        <div class="overflow-hidden rounded-2xl shadow-lg group">
+          <img
+            src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80"
+            alt="Exterior de la finca"
+            class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ubicación Section -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 text-gray-800">
+        Ubicación
+      </h2>
+      <p class="text-center text-xl text-gray-600 mb-12">
+        Fácil acceso y cerca de todo
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="space-y-6">
+          <div class="flex items-start gap-4">
+            <div
+              class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center shrink-0"
+            >
+              <svg
+                class="w-6 h-6 text-green-600"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-2xl font-bold mb-2 text-gray-800">
+                Antioquia, Colombia
+              </h3>
+              <p class="text-gray-600 text-lg">
+                Ubicada en zona rural con fácil acceso desde las principales
+                vías
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div
+              class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center shrink-0"
+            >
+              <svg
+                class="w-6 h-6 text-blue-600"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-2xl font-bold mb-2 text-gray-800">Cerca de ti</h3>
+              <p class="text-gray-600 text-lg">
+                A pocos minutos de los principales centros urbanos de Antioquia
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-green-50 border-l-4 border-green-500 p-6 rounded-r-lg">
+            <p class="text-gray-700 text-lg">
+              <span class="font-bold">📍 ¿Cómo llegar?</span><br />
+              Escríbenos por WhatsApp y te enviaremos la ubicación exacta
+            </p>
+          </div>
+        </div>
+
+        <div class="rounded-2xl overflow-hidden shadow-xl h-96">
+          <!-- Reemplaza con las coordenadas reales de tu finca -->
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6666.148261047867!2d-75.83286658810798!3d6.557557243337441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e45b743c2b3f645%3A0x3bd55cf8a74728ad!2sFinca%20La%20Sociedad!5e0!3m2!1ses-419!2sco!4v1768273657242!5m2!1ses-419!2sco"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            title="Ubicación Finca la Sociedad"
+          >
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Precios Section -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-800">
+        Precios y Reservas
+      </h2>
+      <p class="text-xl text-gray-600 mb-12">
+        Tarifas accesibles para tu descanso perfecto
+      </p>
+
+      <div
+        class="bg-linear-to-br from-green-50 to-green-100 rounded-3xl p-10 shadow-xl border-2 border-green-200"
+      >
+        <div class="mb-8">
+          <p class="text-gray-600 text-xl mb-4">Desde</p>
+          <p class="text-6xl font-bold text-green-600 mb-2">$XXX,XXX</p>
+          <p class="text-gray-600 text-xl">por noche</p>
+        </div>
+
+        <div class="space-y-4 mb-8 text-left max-w-md mx-auto">
+          <div class="flex items-center gap-3">
+            <svg
+              class="w-6 h-6 text-green-600 shrink-0"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700 text-lg"
+              >Tarifas especiales para fines de semana y puentes</span
+            >
+          </div>
+          <div class="flex items-center gap-3">
+            <svg
+              class="w-6 h-6 text-green-600 shrink-0"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700 text-lg"
+              >Descuentos por reservas de varios días</span
+            >
+          </div>
+          <div class="flex items-center gap-3">
+            <svg
+              class="w-6 h-6 text-green-600 shrink-0"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700 text-lg"
+              >Flexibilidad en el número de personas</span
+            >
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 shadow-md">
+          <p class="text-gray-700 text-lg mb-4">
+            <strong>📱 Consulta disponibilidad y precios exactos</strong>
+          </p>
+          <p class="text-gray-600">
+            Escríbenos por WhatsApp para confirmar fechas y obtener una
+            cotización personalizada
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final Section -->
+  <section class="py-20 bg-linear-to-br from-green-600 to-green-700 text-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-4xl md:text-5xl font-bold mb-6">
+        ¿Listo para descansar?
+      </h2>
+      <p class="text-xl md:text-2xl mb-10 opacity-90">
+        Reserva ahora y vive una experiencia inolvidable en Finca la Sociedad
+      </p>
+      <a
+        href={whatsappLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-block bg-white text-green-600 px-12 py-5 rounded-full text-2xl font-bold hover:bg-green-50 transition-all transform hover:scale-105 shadow-2xl"
+      >
+        💬 Hablar por WhatsApp
+      </a>
+      <p class="mt-8 text-lg opacity-80">
+        Respuesta rápida garantizada • Reserva fácil y segura
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white pt-15 pb-5">
+    <div class="max-w-6xl mx-auto px-4 flex flex-row">
+      <div class="mb-6 w-1/2 text-left">
+        <h3 class="text-3xl font-bold mb-4">Finca la Sociedad</h3>
+        <p class="text-gray-400 mb-6 font-bold">Antioquia, Colombia</p>
+        <p class="text-gray-500 mb-6">
+          En el corazón de Santa Fe de Antioquia, donde el sol calienta despacio
+          y el tiempo parece ir más lento, nace Finca La Sociedad. Un lugar
+          rodeado de naturaleza y calma, pensado para descansar, compartir y
+          desconectarse del ruido. Aquí, cada día invita a disfrutar del
+          paisaje, del silencio y del encanto sencillo de la vida en el campo.
+        </p>
+      </div>
+      <div class="w-1/2">
+        <div class="flex justify-center gap-6 mb-8">
+          <a
+            href={whatsappLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:text-green-400 transition-colors"
+          >
+            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+              ></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <hr class="text-gray-800 pt-4" />
+    <p class="text-gray-600 text-sm text-center">
+      © 2026 Finca la Sociedad. Todos los derechos reservados.
+    </p>
+  </footer>
+
+  <!-- Botón flotante de WhatsApp -->
+  <a
+    href={whatsappLink}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 transition-all transform hover:scale-110 z-50 animate-pulse"
+    aria-label="Contactar por WhatsApp"
+  >
+    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+      ></path>
+    </svg>
+  </a>
+
+  <!-- CSS -->
+
+  <style>
+    body {
+      font-family: "Montserrat", sans-serif;
+    }
+
+    .hero-gradient {
+      background: linear-gradient(
+        135deg,
+        rgba(16, 185, 129, 0.9) 0%,
+        rgba(5, 150, 105, 0.9) 100%
+      );
+    }
+
+    /* Fuente inclinada para títulos */
+    .skew-title {
+      transform: skewX(-15deg);
+      display: inline-block;
+      padding: 0 8px;
+    }
+
+    /* Reset de skew para contenido dentro */
+    .skew-title > * {
+      transform: skewX(15deg);
+      display: inline-block;
+    }
+
+    /* Transición suave para imágenes de fondo */
+    .bg-transition {
+      transition: background-image 0.6s ease-in-out;
+    }
+
+    /* Estilos para Swiper */
+    .swiper-container {
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-pagination-bullet {
+      background-color: white;
+      opacity: 0.5;
+      width: 10px;
+      height: 10px;
+    }
+
+    .swiper-pagination-bullet-active {
+      opacity: 1;
+      background-color: #d4af37;
+    }
+
+    .swiper-button-next:after,
+    .swiper-button-prev:after {
+      font-size: 24px;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"
+  ></script>
+
+  <script>
+    // Smooth scroll para navegación
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        const href = anchor.getAttribute("href");
+        const target = href ? document.querySelector(href) : null;
+
+        if (target) {
+          target.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
+      });
+    });
+
+    // Animación de fade-in al hacer scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px",
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const entryTarget = entry.target as HTMLElement;
+          entryTarget.style.opacity = "1";
+          entryTarget.style.transform = "translateY(0)";
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll("section").forEach((section) => {
+      section.style.opacity = "0";
+      section.style.transform = "translateY(20px)";
+      section.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+      observer.observe(section);
+    });
+  </script>
+</Layout>
