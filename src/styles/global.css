@@ -3,11 +3,11 @@
 /* Componente del header */
 
 header {
-    background: #e294e9;
+    background: #676767;
     background: linear-gradient(0deg,
-            rgba(226, 148, 233, 0.5) 25%,
-            rgba(233, 148, 193, 0.23) 60%,
-            rgba(216, 161, 189, 0.258) 100%);
+            rgba(195, 195, 195, 0.595) 25%,
+            rgba(206, 206, 206, 0.23) 60%,
+            rgba(184, 184, 184, 0.258) 100%);
     display: flex;
     width: 40%;
     align-items: center;
