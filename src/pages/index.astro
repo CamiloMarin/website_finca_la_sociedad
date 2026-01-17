@@ -15,21 +15,45 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
 <Layout title="Finca la Sociedad - Alquiler de Finca en Antioquia, Colombia">
   <!-- Main Menu Section -->
 
-  <nav class="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
-    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-      <a href="#" class="text-2xl font-bold text-green-600">
-        Finca la Sociedad
-      </a>
-      <a
-        href={whatsappLink}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="bg-green-600 text-white px-5 py-2 rounded-full font-semibold hover:bg-green-700 transition-colors"
-      >
-        📱 Reservar por WhatsApp
-      </a>
+  <header>
+    <div
+      class="master-header max-w-7xl mx-auto px-4 py-2 flex justify-between items-center"
+    >
+      <div class="logo-main">
+        <!-- Logo -->
+        <img
+          src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=64&q=80"
+          alt="Finca la Sociedad Logo"
+          class="w-10 h-10 rounded-full object-cover"
+        />
+      </div>
+
+      <nav class="top-0 left-0 right-0 z-5">
+        <ul class="menu-block flex space-x-6 p-4 max-w-7xl mx-auto">
+          <li>
+            <a
+              href="#services"
+              class="text-gray-700 hover:text-green-600 font-medium"
+              >Servicios</a
+            >
+          </li>
+          <li>
+            <a
+              href="#gallery"
+              class="text-gray-700 hover:text-green-600 font-medium">Galería</a
+            >
+          </li>
+          <li>
+            <a
+              href="#contact"
+              class="text-gray-700 hover:text-green-600 font-medium">Contacto</a
+            >
+          </li>
+        </ul>
+      </nav>
     </div>
-  </nav>
+  </header>
+
   <!-- Hero Section -->
   <section
     class="relative h-screen flex items-center justify-center overflow-hidden"
@@ -558,7 +582,7 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
      */
     const initDesktopHover = (): void => {
       const columns = document.querySelectorAll<HTMLElement>(
-        "#desktop-columns > div"
+        "#desktop-columns > div",
       );
 
       let activeColumn: HTMLElement | null = null;
@@ -570,13 +594,13 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
         columns.forEach((col) => {
           // indicador
           const indicator_co = col.querySelector<HTMLElement>(
-            ".indicator-residential"
+            ".indicator-residential",
           );
           indicator_co?.classList.remove("bg-amber-500");
           indicator_co?.classList.remove("border-amber-500");
           // fondo negro
           const overlay = col.querySelector<HTMLElement>(
-            ".absolute.inset-0.bg-black\\/70"
+            ".absolute.inset-0.bg-black\\/70",
           );
           overlay?.classList.remove("bg-black/40");
           overlay?.classList.remove("bg-black/70");
@@ -591,7 +615,7 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
         const bgLayer = column.querySelector<HTMLElement>(".bg-image");
 
         const indicator = column.querySelector<HTMLElement>(
-          ".indicator-residential"
+          ".indicator-residential",
         );
         indicator?.classList.add("border-amber-500");
         indicator?.classList.add("bg-amber-500");

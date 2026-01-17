@@ -1,1 +1,86 @@
 @import "tailwindcss";
+
+/* Componente del header */
+
+header {
+    background: #e294e9;
+    background: linear-gradient(0deg,
+            rgba(226, 148, 233, 0.5) 25%,
+            rgba(233, 148, 193, 0.23) 60%,
+            rgba(216, 161, 189, 0.258) 100%);
+    display: flex;
+    width: 40%;
+    align-items: center;
+    border-radius: 100px;
+    margin-top: 30px;
+    justify-self: anchor-center;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: space-between;
+    position: fixed;
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+}
+
+.master-header {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/*LOGO*/
+
+.logo-main {
+    width: 250px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-main img {
+    width: auto;
+    height: 45px;
+
+}
+
+/*MENU*/
+
+.menu-block {
+    width: fit-content;
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.menublock a {
+    color: #232323;
+    font-weight: 600;
+    text-transform: capitalize;
+    font-size: 0.9rem;
+}
+
+.cv_button_block {
+    width: 10%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+/*BOTON CONTACTO*/
+
+.cv_btn {
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
