@@ -3,7 +3,7 @@
 import "../styles/global.css";
 
 // Layaot
-import Layout from "../Layaout/Layaout.astro";
+import Layout from "../layaout/Layaout.astro";
 
 import { Swiper } from "swiper";
 
@@ -326,7 +326,7 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
           >
             <!-- Indicador de estado activo -->
             <div
-              class="absolute top-6 right-6 w-4 h-4 rounded-full border-2 border-gray-300 group-hover:bg-amber-500 group-hover:border-amber-500 transition-colors duration-300 z-20"
+              class="indicator-residential absolute top-6 right-6 w-4 h-4 rounded-full border-2 bg-amber-500 border-amber-500 transition-colors duration-300 z-20"
             >
             </div>
 
@@ -365,7 +365,7 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
           >
             <!-- Indicador de estado activo -->
             <div
-              class="absolute top-6 right-6 w-4 h-4 rounded-full border-2 border-gray-300 group-hover:bg-amber-500 group-hover:border-amber-500 transition-colors duration-300 z-20"
+              class="indicator-residential absolute top-6 right-6 w-4 h-4 rounded-full border-2 bg-amber-500 border-amber-500 transition-colors duration-300 z-20"
             >
             </div>
 
@@ -405,7 +405,7 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
           >
             <!-- Indicador de estado activo -->
             <div
-              class="absolute top-6 right-6 w-4 h-4 rounded-full border-2 border-gray-300 group-hover:bg-amber-500 group-hover:border-amber-500 transition-colors duration-300 z-20"
+              class="indicator-residential absolute top-6 right-6 w-4 h-4 rounded-full border-2bg-amber-500 border-amber-500 transition-colors duration-300 z-20"
             >
             </div>
 
@@ -554,36 +554,6 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
     };
 
     /**
-     * Carga Swiper desde CDN si no existe
-     */
-    const loadSwiperFromCDN = (callback: () => void): void => {
-      const link = document.createElement("link");
-      link.rel = "stylesheet";
-      link.href =
-        "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css";
-      document.head.appendChild(link);
-
-      const script = document.createElement("script");
-      script.src =
-        "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js";
-      script.onload = callback;
-      document.head.appendChild(script);
-    };
-
-    /**
-     * Inicialización mobile
-     */
-    if (window.innerWidth < 768) {
-      if (typeof (window as any).Swiper === "undefined") {
-        loadSwiperFromCDN(() => {
-          swiperInstance = initSwiper();
-        });
-      } else {
-        swiperInstance = initSwiper();
-      }
-    }
-
-    /**
      * Hover desktop
      */
     const initDesktopHover = (): void => {
@@ -598,16 +568,33 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
 
         // Reset todas
         columns.forEach((col) => {
+          // indicador
+          const indicator_co = col.querySelector<HTMLElement>(
+            ".indicator-residential"
+          );
+          indicator_co?.classList.remove("bg-amber-500");
+          indicator_co?.classList.remove("border-amber-500");
+          // fondo negro
+          const overlay = col.querySelector<HTMLElement>(
+            ".absolute.inset-0.bg-black\\/70"
+          );
+          overlay?.classList.remove("bg-black/40");
+          overlay?.classList.remove("bg-black/70");
+          // bg
           const bg = col.querySelector<HTMLElement>(".bg-image");
           bg?.classList.remove("opacity-100");
           bg?.classList.add("opacity-0");
-
-          col.classList.remove("border-amber-500");
         });
 
         // Activar actual
         const bgImage = column.getAttribute("data-bg-image");
         const bgLayer = column.querySelector<HTMLElement>(".bg-image");
+
+        const indicator = column.querySelector<HTMLElement>(
+          ".indicator-residential"
+        );
+        indicator?.classList.add("border-amber-500");
+        indicator?.classList.add("bg-amber-500");
 
         if (bgLayer && bgImage) {
           bgLayer.style.backgroundImage = `url('${bgImage}')`;
@@ -616,6 +603,7 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
         }
 
         column.classList.add("border-amber-500");
+        column.classList.add("z-10");
         activeColumn = column;
       };
 
