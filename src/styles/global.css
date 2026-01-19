@@ -5,31 +5,32 @@
 header {
     background: #676767;
     background: linear-gradient(0deg,
-            rgba(195, 195, 195, 0.595) 25%,
-            rgba(206, 206, 206, 0.23) 60%,
-            rgba(184, 184, 184, 0.258) 100%);
+            rgba(195, 195, 195) 25%,
+            rgb(163, 163, 163) 70%,
+            rgb(135, 135, 135) 100%);
     display: flex;
     width: 40%;
     align-items: center;
     border-radius: 100px;
     margin-top: 30px;
     justify-self: anchor-center;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     margin-left: auto;
     margin-right: auto;
     justify-content: space-between;
     position: fixed;
     backdrop-filter: blur(5px);
     z-index: 1000;
+    justify-content: center;
 }
 
 .master-header {
     display: flex;
     justify-content: center;
     flex-direction: row;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
 }
 
 nav {
