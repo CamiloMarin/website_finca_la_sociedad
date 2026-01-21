@@ -1,12 +1,11 @@
 ---
 // Finca la Sociedad - Landing Page
 import "../styles/global.css";
+import { initFincaGallery } from "../lib/createGallerySwiper";
+
 
 // Layaot
 import Layout from "../layaout/Layaout.astro";
-
-import { Swiper } from "swiper";
-
 const whatsappNumber = "573001234567"; // Reemplaza con tu número real
 const whatsappMessage = "Hola, me interesa reservar la Finca la Sociedad";
 const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
@@ -14,7 +13,6 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
 
 <Layout title="Finca la Sociedad - Alquiler de Finca en Antioquia, Colombia">
   <!-- Main Menu Section -->
-
   <header>
     <div
       class="master-header max-w-7xl mx-auto px-4 flex justify-between items-center"
@@ -344,292 +342,342 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
     </div>
   </section>
 
-  <!-- 3 column Section - Slider Version -->
+  <!-- Hover - Swiper Section -->
   <section class="py-12 md:py-20 bg-gray-900">
     <div class="container mx-auto px-4 md:px-8">
-      <!-- Contenedor principal del Swiper -->
+      <!-- Contenedor principal - Desktop (3 columnas) / Mobile (Swiper) -->
       <div class="relative">
-        <div class="swiper property-types-swiper h-125 md:h-150">
-          <div class="swiper-wrapper">
-            <!-- Slide 1 - RESIDENTIAL -->
-            <div class="swiper-slide">
-              <div
-                class="relative h-full flex flex-col items-center justify-center p-8 overflow-hidden"
-              >
-                <!-- Imagen de fondo -->
-                <div
-                  class="absolute inset-0 bg-cover bg-center transition-opacity duration-700"
-                  style="background-image: url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');"
-                >
-                </div>
-
-                <!-- Overlay oscuro - más oscuro en slides inactivos -->
-                <div
-                  class="slide-overlay absolute inset-0 bg-black/70 transition-all duration-700"
-                >
-                </div>
-
-                <!-- Contenido -->
-                <div class="relative z-10 text-center">
-                  <!-- Indicador de estado activo -->
-                  <div class="flex justify-center mb-4">
-                    <div
-                      class="slide-indicator w-3 h-3 rounded-full bg-gray-400 border-2 border-gray-400 transition-all duration-300"
-                    >
-                    </div>
-                  </div>
-
-                  <div
-                    class="skew-title mb-6 bg-black/70 px-6 py-2 inline-block"
-                  >
-                    <h2
-                      class="text-3xl md:text-4xl font-bold tracking-wider text-white"
-                    >
-                      RESIDENTIAL
-                    </h2>
-                  </div>
-                  <p
-                    class="slide-description text-gray-200 opacity-0 transition-opacity duration-500 max-w-xs mx-auto"
-                  >
-                    Propiedades diseñadas para vivir, con comodidades y espacios
-                    pensados para el hogar.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Slide 2 - OFFICE -->
-            <div class="swiper-slide">
-              <div
-                class="relative h-full flex flex-col items-center justify-center p-8 overflow-hidden"
-              >
-                <!-- Imagen de fondo -->
-                <div
-                  class="absolute inset-0 bg-cover bg-center transition-opacity duration-700"
-                  style="background-image: url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80');"
-                >
-                </div>
-
-                <!-- Overlay oscuro -->
-                <div
-                  class="slide-overlay absolute inset-0 bg-black/70 transition-all duration-700"
-                >
-                </div>
-
-                <!-- Contenido -->
-                <div class="relative z-10 text-center">
-                  <!-- Indicador de estado activo -->
-                  <div class="flex justify-center mb-4">
-                    <div
-                      class="slide-indicator w-3 h-3 rounded-full bg-gray-400 border-2 border-gray-400 transition-all duration-300"
-                    >
-                    </div>
-                  </div>
-
-                  <div
-                    class="skew-title mb-6 bg-black/70 px-6 py-2 inline-block"
-                  >
-                    <h2
-                      class="text-3xl md:text-4xl font-bold tracking-wider text-white"
-                    >
-                      OFFICE
-                    </h2>
-                  </div>
-                  <p
-                    class="slide-description text-gray-200 opacity-0 transition-opacity duration-500 max-w-xs mx-auto"
-                  >
-                    Espacios profesionales optimizados para productividad y
-                    encuentros de negocios.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Slide 3 - COMMERCIAL -->
-            <div class="swiper-slide">
-              <div
-                class="relative h-full flex flex-col items-center justify-center p-8 overflow-hidden"
-              >
-                <!-- Imagen de fondo -->
-                <div
-                  class="absolute inset-0 bg-cover bg-center transition-opacity duration-700"
-                  style="background-image: url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');"
-                >
-                </div>
-
-                <!-- Overlay oscuro -->
-                <div
-                  class="slide-overlay absolute inset-0 bg-black/70 transition-all duration-700"
-                >
-                </div>
-
-                <!-- Contenido -->
-                <div class="relative z-10 text-center">
-                  <!-- Indicador de estado activo -->
-                  <div class="flex justify-center mb-4">
-                    <div
-                      class="slide-indicator w-3 h-3 rounded-full bg-gray-400 border-2 border-gray-400 transition-all duration-300"
-                    >
-                    </div>
-                  </div>
-
-                  <div
-                    class="skew-title mb-6 bg-black/70 px-6 py-2 inline-block"
-                  >
-                    <h2
-                      class="text-3xl md:text-4xl font-bold tracking-wider text-white"
-                    >
-                      COMMERCIAL
-                    </h2>
-                  </div>
-                  <p
-                    class="slide-description text-gray-200 opacity-0 transition-opacity duration-500 max-w-xs mx-auto"
-                  >
-                    Establecimientos comerciales ideales para retail,
-                    restaurantes y negocios al público.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Navegación con flechas visibles -->
+        <!-- Versión Desktop (3 columnas) -->
+        <div
+          id="desktop-columns"
+          class="hidden md:grid md:grid-cols-3 gap-0 h-150"
+        >
+          <!-- Columna 1 - RESIDENTIAL -->
           <div
-            class="swiper-button-next w-12! h-12! bg-amber-500/90! hover:bg-amber-500! rounded-full! after:text-white! after:text-xl! transition-all duration-300"
+            id="col-residential"
+            class="relative overflow-hidden group h-full flex flex-col items-center justify-center p-8 transition-all duration-500 cursor-pointer border-r border-gray-700"
+            data-bg-image="https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
           >
-          </div>
-          <div
-            class="swiper-button-prev w-12! h-12! bg-amber-500/90! hover:bg-amber-500! rounded-full! after:text-white! after:text-xl! transition-all duration-300"
-          >
+            <!-- Indicador de estado activo -->
+            <div
+              class="indicator-residential absolute top-6 right-6 w-4 h-4 rounded-full border-2 bg-amber-500 border-amber-500 transition-colors duration-300 z-20"
+            >
+            </div>
+
+            <!-- Contenido -->
+            <div class="relative z-10 text-center">
+              <div class="skew-title mb-6 bg-black/70 px-6 py-2">
+                <h2 class="text-3xl font-bold tracking-wider text-white">
+                  RESIDENTIAL
+                </h2>
+              </div>
+              <p
+                class="text-gray-200 opacity-0 group-hover:opacity-100 transition-opacity duration-500 max-w-xs"
+              >
+                Propiedades diseñadas para vivir, con comodidades y espacios
+                pensados para el hogar.
+              </p>
+            </div>
+            <!-- Imagen de fondo -->
+            <div
+              class="bg-image absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-500 z-0"
+            >
+            </div>
+
+            <!-- Overlay oscuro que se aclara en hover -->
+            <div
+              class="absolute inset-0 bg-black/70 group-hover:bg-black/40 transition-all duration-500 z-0"
+            >
+            </div>
           </div>
 
-          <!-- Paginación -->
-          <div class="swiper-pagination bottom-6!"></div>
+          <!-- Columna 2 - OFFICE -->
+          <div
+            id="col-office"
+            class="relative overflow-hidden group h-full flex flex-col items-center justify-center p-8 transition-all duration-500 cursor-pointer border-r border-gray-700"
+            data-bg-image="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+          >
+            <!-- Indicador de estado activo -->
+            <div
+              class="indicator-residential absolute top-6 right-6 w-4 h-4 rounded-full border-2 bg-amber-500 border-amber-500 transition-colors duration-300 z-20"
+            >
+            </div>
+
+            <!-- Contenido -->
+            <div class="relative z-10 text-center">
+              <div class="skew-title mb-6 bg-black/70 px-6 py-2">
+                <h2 class="text-3xl font-bold tracking-wider text-white">
+                  OFFICE
+                </h2>
+              </div>
+              <p
+                class="text-gray-200 opacity-0 group-hover:opacity-100 transition-opacity duration-500 max-w-xs"
+              >
+                Espacios profesionales optimizados para productividad y
+                encuentros de negocios.
+              </p>
+            </div>
+
+            <!-- Imagen de fondo -->
+            <div
+              class="bg-image absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-500 z-0"
+            >
+            </div>
+
+            <!-- Overlay oscuro que se aclara en hover -->
+            <div
+              class="absolute inset-0 bg-black/70 group-hover:bg-black/40 transition-all duration-500 z-0"
+            >
+            </div>
+          </div>
+
+          <!-- Columna 3 - COMMERCIAL -->
+          <div
+            id="col-commercial"
+            class="relative overflow-hidden group h-full flex flex-col items-center justify-center p-8 transition-all duration-500 cursor-pointer"
+            data-bg-image="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+          >
+            <!-- Indicador de estado activo -->
+            <div
+              class="indicator-residential absolute top-6 right-6 w-4 h-4 rounded-full border-2bg-amber-500 border-amber-500 transition-colors duration-300 z-20"
+            >
+            </div>
+
+            <!-- Contenido -->
+            <div class="relative z-10 text-center">
+              <div class="skew-title mb-6 bg-black/70 px-6 py-2">
+                <h2 class="text-3xl font-bold tracking-wider text-white">
+                  COMMERCIAL
+                </h2>
+              </div>
+              <p
+                class="text-gray-200 opacity-0 group-hover:opacity-100 transition-opacity duration-500 max-w-xs"
+              >
+                Establecimientos comerciales ideales para retail, restaurantes y
+                negocios al público.
+              </p>
+            </div>
+
+            <!-- Imagen de fondo -->
+            <div
+              class="bg-image absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-500 z-0"
+            >
+            </div>
+
+            <!-- Overlay oscuro que se aclara en hover -->
+            <div
+              class="absolute inset-0 bg-black/70 group-hover:bg-black/40 transition-all duration-500 z-0"
+            >
+            </div>
+          </div>
+        </div>
+
+        <!-- Versión Mobile (Swiper) -->
+        <div id="mobile-slider" class="md:hidden">
+          <div class="swiper-container h-150 rounded-xl overflow-hidden">
+            <div class="swiper-wrapper">
+              <!-- Slide 1 - RESIDENTIAL -->
+              <div class="swiper-slide">
+                <div
+                  class="relative h-full w-full flex flex-col items-center justify-center p-6 bg-cover bg-center bg-transition"
+                  style="background-image: url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');"
+                >
+                  <div class="absolute inset-0 bg-black/50"></div>
+                  <div class="relative z-10 text-center">
+                    <div class="skew-title mb-6 bg-black/70 px-6 py-2">
+                      <h2 class="text-3xl font-bold tracking-wider text-white">
+                        RESIDENTIAL
+                      </h2>
+                    </div>
+                    <p class="text-gray-200 max-w-xs">
+                      Propiedades diseñadas para vivir, con comodidades y
+                      espacios pensados para el hogar.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 2 - OFFICE -->
+              <div class="swiper-slide">
+                <div
+                  class="relative h-full w-full flex flex-col items-center justify-center p-6 bg-cover bg-center bg-transition"
+                  style="background-image: url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80');"
+                >
+                  <div class="absolute inset-0 bg-black/50"></div>
+                  <div class="relative z-10 text-center">
+                    <div class="skew-title mb-6 bg-black/70 px-6 py-2">
+                      <h2 class="text-3xl font-bold tracking-wider text-white">
+                        OFFICE
+                      </h2>
+                    </div>
+                    <p class="text-gray-200 max-w-xs">
+                      Espacios profesionales optimizados para productividad y
+                      encuentros de negocios.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 3 - COMMERCIAL -->
+              <div class="swiper-slide">
+                <div
+                  class="relative h-full w-full flex flex-col items-center justify-center p-6 bg-cover bg-center bg-transition"
+                  style="background-image: url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');"
+                >
+                  <div class="absolute inset-0 bg-black/50"></div>
+                  <div class="relative z-10 text-center">
+                    <div class="skew-title mb-6 bg-black/70 px-6 py-2">
+                      <h2 class="text-3xl font-bold tracking-wider text-white">
+                        COMMERCIAL
+                      </h2>
+                    </div>
+                    <p class="text-gray-200 max-w-xs">
+                      Establecimientos comerciales ideales para retail,
+                      restaurantes y negocios al público.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Paginación -->
+            <div class="swiper-pagination bottom-4!"></div>
+
+            <!-- Navegación -->
+            <div class="swiper-button-next text-amber-500! right-4!"></div>
+            <div class="swiper-button-prev text-amber-500! left-4!"></div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 3 column Section Script para funcionalidad -->
-  <script>
-    import { createSwiper } from "../lib/createSwiper"; // Ajusta la ruta según tu estructura
 
+  <!-- Script para funcionalidad / Hover - Swiper Section -->
+  <script>
+    // Esperar a que el DOM esté listo
     document.addEventListener("DOMContentLoaded", () => {
-      // Crear el swiper usando tu módulo
-      const propertyTypesSwiper = createSwiper({
-        selector: ".property-types-swiper",
-        options: {
-          direction: "horizontal",
-          loop: false,
-          slidesPerView: 3,
-          spaceBetween: 0,
-          centeredSlides: false,
-          speed: 800,
-          autoplay: {
-            delay: 4000,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: false,
-          },
-          pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-            dynamicBullets: true,
-          },
-          navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-          },
-          on: {
-            init: function () {
-              updateSlideStates(this);
-            },
-            slideChange: function () {
-              updateSlideStates(this);
-            },
-          },
-        },
-      });
+      let swiperInstance: any | null = null;
 
       /**
-       * Actualiza los estados visuales de los slides
-       * - El slide activo: overlay más claro, indicador amber, descripción visible
-       * - Slides inactivos: overlay más oscuro, indicador gris, descripción oculta
+       * Inicializa Swiper (solo mobile)
        */
-      function updateSlideStates(swiper: any) {
-        const slides = swiper.slides;
+      const initSwiper = (): any | null => {
+        if (typeof (window as any).Swiper !== "undefined") {
+          return new (window as any).Swiper(".swiper-container", {
+            direction: "horizontal",
+            loop: false,
+            slidesPerView: 1,
+            spaceBetween: 0,
+            centeredSlides: true,
+            pagination: {
+              el: ".swiper-pagination",
+              clickable: true,
+            },
+            navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            },
+            autoplay: {
+              delay: 5000,
+              disableOnInteraction: false,
+            },
+          });
+        }
+        return null;
+      };
 
-        slides.forEach((slide: HTMLElement, index: number) => {
-          const overlay = slide.querySelector(".slide-overlay");
-          const indicator = slide.querySelector(".slide-indicator");
-          const description = slide.querySelector(".slide-description");
+      /**
+       * Hover desktop
+       */
+      const initDesktopHover = (): void => {
+        const columns = document.querySelectorAll<HTMLElement>(
+          "#desktop-columns > div",
+        );
 
-          // Verificar si es el slide activo
-          const isActive = slide.classList.contains("swiper-slide-active");
+        let activeColumn: HTMLElement | null = null;
 
-          if (isActive) {
-            // Slide activo: imagen más visible
-            overlay?.classList.remove("bg-black/70");
-            overlay?.classList.add("bg-black/40");
+        const activateColumn = (column: HTMLElement) => {
+          if (activeColumn === column) return;
 
-            // Indicador amber
-            indicator?.classList.remove("bg-gray-400", "border-gray-400");
-            indicator?.classList.add("bg-amber-500", "border-amber-500");
-
-            // Mostrar descripción
-            description?.classList.remove("opacity-0");
-            description?.classList.add("opacity-100");
-          } else {
-            // Slides inactivos: imagen con overlay más oscuro
+          // Reset todas
+          columns.forEach((col) => {
+            // indicador
+            const indicator_co = col.querySelector<HTMLElement>(
+              ".indicator-residential",
+            );
+            indicator_co?.classList.remove("bg-amber-500");
+            indicator_co?.classList.remove("border-amber-500");
+            // fondo negro
+            const overlay = col.querySelector<HTMLElement>(
+              ".absolute.inset-0.bg-black\\/70",
+            );
             overlay?.classList.remove("bg-black/40");
-            overlay?.classList.add("bg-black/70");
+            overlay?.classList.remove("bg-black/70");
+            // bg
+            const bg = col.querySelector<HTMLElement>(".bg-image");
+            bg?.classList.remove("opacity-100");
+            bg?.classList.add("opacity-0");
+          });
 
-            // Indicador gris
-            indicator?.classList.remove("bg-amber-500", "border-amber-500");
-            indicator?.classList.add("bg-gray-400", "border-gray-400");
+          // Activar actual
+          const bgImage = column.getAttribute("data-bg-image");
+          const bgLayer = column.querySelector<HTMLElement>(".bg-image");
 
-            // Ocultar descripción
-            description?.classList.remove("opacity-100");
-            description?.classList.add("opacity-0");
+          const indicator = column.querySelector<HTMLElement>(
+            ".indicator-residential",
+          );
+          indicator?.classList.add("border-amber-500");
+          indicator?.classList.add("bg-amber-500");
+
+          if (bgLayer && bgImage) {
+            bgLayer.style.backgroundImage = `url('${bgImage}')`;
+            bgLayer.classList.remove("opacity-0");
+            bgLayer.classList.add("opacity-100");
           }
+
+          column.classList.add("border-amber-500");
+          column.classList.add("z-10");
+          activeColumn = column;
+        };
+
+        columns.forEach((column) => {
+          column.addEventListener("mouseenter", () => {
+            activateColumn(column);
+          });
         });
+
+        // 👉 Columna inicial activa (central)
+        if (columns.length >= 2) {
+          activateColumn(columns[1]);
+        }
+      };
+
+      /**
+       * Inicialización desktop
+       */
+      if (window.innerWidth >= 768) {
+        initDesktopHover();
       }
 
-      // Verificar que el swiper se creó correctamente
-      if (!propertyTypesSwiper) {
-        console.error("No se pudo inicializar el Swiper de tipos de propiedad");
-      }
+      /**
+       * Resize handler
+       */
+      window.addEventListener("resize", () => {
+        if (
+          window.innerWidth < 768 &&
+          !swiperInstance &&
+          typeof (window as any).Swiper !== "undefined"
+        ) {
+          swiperInstance = initSwiper();
+        } else if (window.innerWidth >= 768 && swiperInstance) {
+          swiperInstance.destroy(true, true);
+          swiperInstance = null;
+          initDesktopHover();
+        }
+      });
     });
   </script>
-
-  <style>
-    /* Estilos adicionales para mejorar la apariencia */
-    .property-types-swiper {
-      border-radius: 0.75rem;
-      overflow: hidden;
-    }
-
-    /* Efecto skew para los títulos (opcional) */
-    .skew-title {
-      transform: skewX(-2deg);
-    }
-
-    .skew-title h2 {
-      transform: skewX(2deg);
-    }
-
-    /* Sombras para los títulos cuando no están activos */
-    .swiper-slide:not(.swiper-slide-active) .skew-title {
-      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
-    }
-
-    /* Asegurar que las flechas sean visibles en mobile también */
-    @media (max-width: 768px) {
-      .swiper-button-next,
-      .swiper-button-prev {
-        transform: scale(0.8);
-      }
-    }
-  </style>
 
   <!-- Galería Section -->
   <section class="py-20 bg-white">
@@ -717,7 +765,7 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
     </div>
   </section>
 
-  <!-- Galería Section // Lightbox Modal -->
+  <!-- Lightbox Modal / Galería Section -->
   <div
     id="finca-gallery-lightbox"
     class="fixed inset-0 bg-black bg-opacity-95 z-50 hidden items-center justify-center"
@@ -794,134 +842,57 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
       </div>
     </div>
   </div>
-
-  <!-- Galería Section // CSS -->
+  <!-- CSS / Galería Section -->
   <style>
-    /* Estilos personalizados para la paginación */
-    .finca-gallery-swiper .swiper-pagination {
-      color: white !important;
-      background: rgba(0, 0, 0, 0.5);
-      padding: 8px 16px;
-      border-radius: 20px;
-      display: inline-block;
-      left: 50% !important;
-      transform: translateX(-50%);
-      width: auto !important;
+  /* Estilos personalizados para la paginación */
+  .finca-gallery-swiper .swiper-pagination {
+    color: white !important;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 8px 16px;
+    border-radius: 20px;
+    display: inline-block;
+    left: 50% !important;
+    transform: translateX(-50%);
+    width: auto !important;
+  }
+
+  /* Mejorar visibilidad de las flechas */
+  .finca-gallery-swiper .swiper-button-next,
+  .finca-gallery-swiper .swiper-button-prev {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+  }
+
+  .finca-gallery-swiper .swiper-button-next:hover,
+  .finca-gallery-swiper .swiper-button-prev:hover {
+    background: rgba(0, 0, 0, 0.8);
+    transform: scale(1.1);
+  }
+
+  /* Ajustes responsive para las flechas */
+  @media (max-width: 768px) {
+    .finca-gallery-swiper .swiper-button-next {
+      right: 10px;
     }
 
-    /* Mejorar visibilidad de las flechas */
-    .finca-gallery-swiper .swiper-button-next,
     .finca-gallery-swiper .swiper-button-prev {
-      background: rgba(0, 0, 0, 0.5);
-      border-radius: 50%;
-      transition: all 0.3s ease;
+      left: 10px;
     }
-
-    .finca-gallery-swiper .swiper-button-next:hover,
-    .finca-gallery-swiper .swiper-button-prev:hover {
-      background: rgba(0, 0, 0, 0.8);
-      transform: scale(1.1);
-    }
-
-    /* Ajustes responsive para las flechas */
-    @media (max-width: 768px) {
-      .finca-gallery-swiper .swiper-button-next {
-        right: 10px;
-      }
-
-      .finca-gallery-swiper .swiper-button-prev {
-        left: 10px;
-      }
-    }
+  }
   </style>
 
-  <!-- Galería Section // JavaScript -->
-  <script>
-    import Swiper from "swiper";
-    import { Navigation, Pagination, Keyboard } from "swiper/modules";
-    import "swiper/css";
-    import "swiper/css/navigation";
-    import "swiper/css/pagination";
 
-    let fincaGallerySwiper: Swiper | null = null;
 
-    function initFincaGallery() {
-      const lightbox = document.getElementById("finca-gallery-lightbox");
-      const closeBtn = document.getElementById("close-finca-gallery");
-      const galleryImages = document.querySelectorAll("[data-gallery-img]");
+  <!-- script / Galería, CreateSwiper -->    
+<script>
+import { initFincaGallery } from "../lib/createGallerySwiper";
 
-      // Inicializar Swiper
-      fincaGallerySwiper = new Swiper(".finca-gallery-swiper", {
-        modules: [Navigation, Pagination, Keyboard],
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-        pagination: {
-          el: ".swiper-pagination",
-          type: "fraction",
-        },
-        keyboard: {
-          enabled: true,
-        },
-        loop: true,
-        zoom: false,
-        spaceBetween: 20,
-      });
+  initFincaGallery();
+</script>
 
-      // Abrir lightbox al hacer click en una imagen
-      galleryImages.forEach((img) => {
-        img.addEventListener("click", () => {
-          const index = parseInt(img.getAttribute("data-gallery-img") || "0");
-          if (lightbox && fincaGallerySwiper) {
-            lightbox.classList.remove("hidden");
-            lightbox.classList.add("flex");
-            fincaGallerySwiper.slideToLoop(index);
-            document.body.style.overflow = "hidden";
-          }
-        });
-      });
+  <!-- Script / Galería Section -->
 
-      // Cerrar lightbox
-      function closeFincaLightbox() {
-        if (lightbox) {
-          lightbox.classList.add("hidden");
-          lightbox.classList.remove("flex");
-          document.body.style.overflow = "";
-        }
-      }
-
-      closeBtn?.addEventListener("click", closeFincaLightbox);
-
-      // Cerrar con ESC
-      document.addEventListener("keydown", (e) => {
-        if (
-          e.key === "Escape" &&
-          lightbox &&
-          !lightbox.classList.contains("hidden")
-        ) {
-          closeFincaLightbox();
-        }
-      });
-
-      // Cerrar al hacer click en el fondo
-      lightbox?.addEventListener("click", (e) => {
-        if (
-          e.target === lightbox ||
-          (e.target as HTMLElement)?.classList.contains("swiper")
-        ) {
-          closeFincaLightbox();
-        }
-      });
-    }
-
-    // Inicializar cuando el DOM esté listo
-    if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", initFincaGallery);
-    } else {
-      initFincaGallery();
-    }
-  </script>
 
   <!-- Ubicación Section -->
   <section class="py-20 bg-gray-50">
@@ -955,8 +926,7 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
                 Antioquia, Colombia
               </h3>
               <p class="text-gray-600 text-lg">
-                Ubicada en zona rural con fácil acceso desde las principales
-                vías
+                Ubicada en zona rural con fácil acceso desde las principales vías
               </p>
             </div>
           </div>
@@ -1081,8 +1051,8 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
             <strong>📱 Consulta disponibilidad y precios exactos</strong>
           </p>
           <p class="text-gray-600">
-            Escríbenos por WhatsApp para confirmar fechas y obtener una
-            cotización personalizada
+            Escríbenos por WhatsApp para confirmar fechas y obtener una cotización
+            personalizada
           </p>
         </div>
       </div>
@@ -1092,9 +1062,7 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
   <!-- CTA Final Section -->
   <section class="py-20 bg-linear-to-br from-green-600 to-green-700 text-white">
     <div class="max-w-4xl mx-auto px-4 text-center">
-      <h2 class="text-4xl md:text-5xl font-bold mb-6">
-        ¿Listo para descansar?
-      </h2>
+      <h2 class="text-4xl md:text-5xl font-bold mb-6">¿Listo para descansar?</h2>
       <p class="text-xl md:text-2xl mb-10 opacity-90">
         Reserva ahora y vive una experiencia inolvidable en Finca la Sociedad
       </p>
@@ -1119,11 +1087,11 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
         <h3 class="text-3xl font-bold mb-4">Finca la Sociedad</h3>
         <p class="text-gray-400 mb-6 font-bold">Antioquia, Colombia</p>
         <p class="text-gray-500 mb-6">
-          En el corazón de Santa Fe de Antioquia, donde el sol calienta despacio
-          y el tiempo parece ir más lento, nace Finca La Sociedad. Un lugar
-          rodeado de naturaleza y calma, pensado para descansar, compartir y
-          desconectarse del ruido. Aquí, cada día invita a disfrutar del
-          paisaje, del silencio y del encanto sencillo de la vida en el campo.
+          En el corazón de Santa Fe de Antioquia, donde el sol calienta despacio y
+          el tiempo parece ir más lento, nace Finca La Sociedad. Un lugar rodeado
+          de naturaleza y calma, pensado para descansar, compartir y desconectarse
+          del ruido. Aquí, cada día invita a disfrutar del paisaje, del silencio y
+          del encanto sencillo de la vida en el campo.
         </p>
       </div>
       <div class="w-1/2">
@@ -1165,7 +1133,6 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
   </a>
 
   <!-- CSS -->
-
   <style>
     body {
       font-family: "Montserrat", sans-serif;
@@ -1221,7 +1188,6 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
     }
   </style>
 
-  <!-- JavaScript Global -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"
   ></script>
 
@@ -1266,3 +1232,5 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
     });
   </script>
 </Layout>
+
+

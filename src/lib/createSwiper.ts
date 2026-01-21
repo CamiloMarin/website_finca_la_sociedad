@@ -1,5 +1,6 @@
 // importamos el componente Slider desde la librería 'swiper'
 import Swiper from "swiper";
+
 import type { SwiperOptions } from "swiper/types";
 
 // Primero creo un type de las opciones del swiper
