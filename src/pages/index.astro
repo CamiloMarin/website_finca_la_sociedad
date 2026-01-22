@@ -1,8 +1,6 @@
 ---
 // Finca la Sociedad - Landing Page
 import "../styles/global.css";
-import { initFincaGallery } from "../lib/createGallerySwiper";
-
 
 // Layaot
 import Layout from "../layaout/Layaout.astro";
@@ -124,30 +122,31 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
 
   <!-- ¿Qué ofrece? Section -->
   <section
-    class="py-24 bg-white flex flex-row max-w-7xl centered mx-auto gap-10 px-4 md:px-0"
+    class="py-24 bg-white flex flex-row justify-self-center centered px-4 md:px-0 w-full"
   >
-    <div class="mx-auto px-4 md:w-2/3">
-      <!-- Header -->
-      <div class="max-w-3xl mb-20">
-        <h2
-          class="text-5xl md:text-6xl font-bold mb-6 text-gray-900 leading-tight"
-        >
-          Servicios que ofrecemos
-        </h2>
-        <p class="text-xl md:text-2xl text-gray-600 leading-relaxed">
-          Descubre todas las comodidades y servicios diseñados para hacer de tu
-          estadía una experiencia inolvidable. En Finca la Sociedad encontrarás
-          todo lo necesario para disfrutar al máximo.
-        </p>
+    <div class="flex flex-row max-w-7xl centered mx-auto gap-10 px-4 md:px-0">
+      <div class="mx-auto px-4 md:w-2/3">
+        <!-- Header -->
+        <div class="max-w-3xl mb-20">
+          <h2
+            class="text-5xl md:text-6xl font-bold mb-6 text-gray-900 leading-tight"
+          >
+            Servicios que ofrecemos
+          </h2>
+          <p class="text-xl md:text-2xl text-gray-600 leading-relaxed">
+            Descubre todas las comodidades y servicios diseñados para hacer de
+            tu estadía una experiencia inolvidable. En Finca la Sociedad
+            encontrarás todo lo necesario para disfrutar al máximo.
+          </p>
+        </div>
       </div>
-    </div>
-    <div class="md:w-1.5/4">
-      <img
-        src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80"
-        alt="Vista principal de la finca"
-        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 rounded-2xl"
-      />
-      <!-- <picture>
+      <div class="md:w-1.5/4">
+        <img
+          src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80"
+          alt="Vista principal de la finca"
+          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 rounded-2xl"
+        />
+        <!-- <picture>
           <source
             srcset="/images/banner_principal_mobil.webp"
             media="(max-width: 768px)"
@@ -159,14 +158,15 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
             fetchpriority="high"
           />
         </picture> -->
+      </div>
     </div>
   </section>
 
   <!-- Servicios Section -->
   <section
-    class="py-24 bg-white flex flex-row max-w-7xl centered mx-auto gap-10 px-4 md:px-0"
+    class="py-24 bg-white flex flex-row centered mx-auto gap-10 px-4 md:px-0"
   >
-    <div class="mx-auto px-4">
+    <div class="mx-auto max-w-7xl px-4">
       <!-- Services Grid -->
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
         <!-- Feature 1 - Capacidad -->
@@ -243,12 +243,16 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
               <svg
                 class="w-10 h-10 text-emerald-600"
                 fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M5 2a1 1 0 011 1v1h1a1 1 0 010 2H6v1a1 1 0 01-2 0V6H3a1 1 0 010-2h1V3a1 1 0 011-1zm0 10a1 1 0 011 1v1h1a1 1 0 110 2H6v1a1 1 0 11-2 0v-1H3a1 1 0 110-2h1v-1a1 1 0 011-1zM12 2a1 1 0 01.967.744L14.146 7.2 17.5 9.134a1 1 0 010 1.732l-3.354 1.935-1.18 4.455a1 1 0 01-1.933 0L9.854 12.8 6.5 10.866a1 1 0 010-1.732l3.354-1.935 1.18-4.455A1 1 0 0112 2z"
-                  clip-rule="evenodd"></path>
+                xmlns="http://www.w3.org/2000/svg"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                version="1.1"
+                width="55"
+                height="55"
+                viewBox="0 0 55 55"
+                ><path
+                  d="m18.888 5.461 0.336 -0.004 0.368 -0.001 0.378 -0.001 0.797 -0.002q0.603 -0.002 1.205 -0.007c2.882 -0.013 5.456 0.513 7.677 2.504l0.291 0.26c2.041 1.93 3.04 4.464 3.137 7.242l0.009 0.34c0.447 -0.061 0.747 -0.325 1.094 -0.59 2.319 -1.704 4.89 -2.476 7.754 -2.455h0.483q0.499 0 0.999 0.004 0.639 0.004 1.28 0.001l0.99 0.001h0.473l0.655 0.002 0.376 0.001c0.292 0.028 0.292 0.028 0.506 0.243 0.028 0.26 0.028 0.26 0.029 0.594l0.004 0.378v0.412l0.001 0.425v0.896q-0.001 0.453 0.002 0.907c0.028 4.296 -0.738 7.826 -3.796 10.999l-0.193 0.214c-2.033 2.189 -5.23 3.25 -8.139 3.384 -0.825 0.044 -1.435 0.1 -2.02 0.732 -0.417 0.5 -0.523 1.054 -0.524 1.693l-0.001 0.389 0.001 0.422 -0.001 0.447 -0.001 0.961 -0.004 1.522q-0.007 2.162 -0.009 4.324 -0.001 1.195 -0.006 2.391 -0.004 0.755 -0.001 1.511 0 0.471 -0.004 0.941 -0.001 0.32 0.001 0.642c-0.005 0.73 -0.035 1.215 -0.485 1.804 -0.557 0.517 -1.011 0.576 -1.748 0.567 -0.54 -0.056 -0.82 -0.335 -1.179 -0.715 -0.319 -0.478 -0.405 -0.9 -0.436 -1.464 -0.05 -0.568 -0.18 -0.807 -0.611 -1.182 -0.618 -0.231 -1.192 -0.244 -1.847 -0.244l-0.65 -0.007 -1.01 -0.005c-2.039 -0.006 -4.016 -0.205 -5.953 -0.879l-0.32 -0.109c-4.409 -1.569 -7.936 -4.919 -9.959 -9.102 -0.962 -2.053 -1.552 -4.303 -1.542 -6.577v-0.299l0.001 -0.969v-0.676l0.002 -1.771 0.002 -1.81 0.005 -3.547c0.32 -0.16 0.648 -0.123 0.999 -0.123l0.246 -0.001 0.808 -0.001 0.567 -0.001 1.194 -0.001 1.211 -0.002c6.264 -0.021 11.243 0.857 15.923 5.287l0.39 0.396c0.221 0.274 0.221 0.274 0.471 0.248q0.012 -1.116 0.018 -2.231l0.006 -0.759q0.006 -0.545 0.007 -1.09l0.005 -0.343v-0.319l0.002 -0.281c-0.048 -0.291 -0.132 -0.381 -0.361 -0.561 -0.236 -0.117 -0.387 -0.131 -0.649 -0.15 -2.375 -0.191 -4.35 -0.812 -6.226 -2.321l-0.221 -0.169c-1.986 -1.596 -3.114 -4.124 -3.433 -6.599a19.556 19.556 0 0 1 -0.024 -1.344v-0.369l0.002 -0.764q0.002 -0.588 0.002 -1.176l0.002 -0.746V6.417l0.002 -0.326 0.001 -0.288c0.028 -0.422 0.275 -0.339 0.64 -0.341"
+                  fill="#009966"></path>
               </svg>
             </div>
             <h3 class="text-2xl font-bold mb-3 text-gray-900">Zonas Verdes</h3>
@@ -552,8 +556,7 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
     </div>
   </section>
 
-
-  <!-- Script para funcionalidad / Hover - Swiper Section -->
+  <!-- Script para funcionalidad / Hover - Swiper Section
   <script>
     // Esperar a que el DOM esté listo
     document.addEventListener("DOMContentLoaded", () => {
@@ -677,7 +680,7 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
         }
       });
     });
-  </script>
+  </script> -->
 
   <!-- Galería Section -->
   <section class="py-20 bg-white">
@@ -710,7 +713,7 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
           <img
             src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80"
             alt="Piscina"
-            class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
           />
         </div>
 
@@ -722,7 +725,7 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
           <img
             src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80"
             alt="Zona social"
-            class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
           />
         </div>
 
@@ -734,7 +737,7 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
           <img
             src="https://images.unsplash.com/photo-1602941525421-8f8b81d3edbb?w=800&q=80"
             alt="Habitación"
-            class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
           />
         </div>
 
@@ -746,7 +749,7 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
           <img
             src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80"
             alt="Zonas verdes"
-            class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
           />
         </div>
 
@@ -758,7 +761,7 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
           <img
             src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80"
             alt="Exterior de la finca"
-            class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
           />
         </div>
       </div>
@@ -768,7 +771,7 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
   <!-- Lightbox Modal / Galería Section -->
   <div
     id="finca-gallery-lightbox"
-    class="fixed inset-0 bg-black bg-opacity-95 z-50 hidden items-center justify-center"
+    class="fixed inset-0 bg-[#000000ec] bg-opacity-95 z-50 hidden items-center justify-center"
   >
     <button
       id="close-finca-gallery"
@@ -788,42 +791,42 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
             <img
               src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1200&q=80"
               alt="Vista principal de la finca"
-              class="max-w-full max-h-full object-contain rounded-lg"
+              class="max-w-full max-h-full object-contain rounded-lg justify-self-center"
             />
           </div>
           <div class="swiper-slide flex items-center justify-center p-4">
             <img
               src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200&q=80"
               alt="Piscina"
-              class="max-w-full max-h-full object-contain rounded-lg"
+              class="max-w-full max-h-full object-contain rounded-lg justify-self-center"
             />
           </div>
           <div class="swiper-slide flex items-center justify-center p-4">
             <img
               src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1200&q=80"
               alt="Zona social"
-              class="max-w-full max-h-full object-contain rounded-lg"
+              class="max-w-full max-h-full object-contain rounded-lg justify-self-center"
             />
           </div>
           <div class="swiper-slide flex items-center justify-center p-4">
             <img
               src="https://images.unsplash.com/photo-1602941525421-8f8b81d3edbb?w=1200&q=80"
               alt="Habitación"
-              class="max-w-full max-h-full object-contain rounded-lg"
+              class="max-w-full max-h-full object-contain rounded-lg justify-self-center"
             />
           </div>
           <div class="swiper-slide flex items-center justify-center p-4">
             <img
               src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80"
               alt="Zonas verdes"
-              class="max-w-full max-h-full object-contain rounded-lg"
+              class="max-w-full max-h-full object-contain rounded-lg justify-self-center"
             />
           </div>
           <div class="swiper-slide flex items-center justify-center p-4">
             <img
               src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80"
               alt="Exterior de la finca"
-              class="max-w-full max-h-full object-contain rounded-lg"
+              class="max-w-full max-h-full object-contain rounded-lg justify-self-center"
             />
           </div>
         </div>
@@ -831,6 +834,11 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
         <!-- Navegación con mejor posicionamiento -->
         <div
           class="swiper-button-next text-white w-10 h-10 md:w-12 md:h-12 after:text-2xl md:after:text-4xl"
+        >
+        </div>
+
+        <div
+          class="swiper-button-prev text-white w-10 h-10 md:w-12 md:h-12 after:text-2xl md:after:text-4xl"
         >
         </div>
       </div>
@@ -844,55 +852,36 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
   </div>
   <!-- CSS / Galería Section -->
   <style>
-  /* Estilos personalizados para la paginación */
-  .finca-gallery-swiper .swiper-pagination {
-    color: white !important;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 8px 16px;
-    border-radius: 20px;
-    display: inline-block;
-    left: 50% !important;
-    transform: translateX(-50%);
-    width: auto !important;
-  }
-
-  /* Mejorar visibilidad de las flechas */
-  .finca-gallery-swiper .swiper-button-next,
-  .finca-gallery-swiper .swiper-button-prev {
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 50%;
-    transition: all 0.3s ease;
-  }
-
-  .finca-gallery-swiper .swiper-button-next:hover,
-  .finca-gallery-swiper .swiper-button-prev:hover {
-    background: rgba(0, 0, 0, 0.8);
-    transform: scale(1.1);
-  }
-
-  /* Ajustes responsive para las flechas */
-  @media (max-width: 768px) {
-    .finca-gallery-swiper .swiper-button-next {
-      right: 10px;
-    }
-
+    /* Mejorar visibilidad de las flechas */
+    .finca-gallery-swiper .swiper-button-next,
     .finca-gallery-swiper .swiper-button-prev {
-      left: 10px;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 50%;
+      transition: all 0.3s ease;
     }
-  }
+
+    .finca-gallery-swiper .swiper-button-next:hover,
+    .finca-gallery-swiper .swiper-button-prev:hover {
+      background: rgba(0, 0, 0, 0.8);
+      transform: scale(1.1);
+    }
+
+    /* Ajustes responsive para las flechas */
+    @media (max-width: 768px) {
+      .finca-gallery-swiper .swiper-button-next {
+        right: 10px;
+      }
+
+      .finca-gallery-swiper .swiper-button-prev {
+        left: 10px;
+      }
+    }
   </style>
 
-
-
-  <!-- script / Galería, CreateSwiper -->    
-<script>
-import { initFincaGallery } from "../lib/createGallerySwiper";
-
-  initFincaGallery();
-</script>
-
-  <!-- Script / Galería Section -->
-
+  <!-- script / Galería, CreateSwiper -->
+  <script src="../lib/createGallerySwiper.ts">
+    initFincaGallery();
+  </script>
 
   <!-- Ubicación Section -->
   <section class="py-20 bg-gray-50">
@@ -926,7 +915,8 @@ import { initFincaGallery } from "../lib/createGallerySwiper";
                 Antioquia, Colombia
               </h3>
               <p class="text-gray-600 text-lg">
-                Ubicada en zona rural con fácil acceso desde las principales vías
+                Ubicada en zona rural con fácil acceso desde las principales
+                vías
               </p>
             </div>
           </div>
@@ -1051,8 +1041,8 @@ import { initFincaGallery } from "../lib/createGallerySwiper";
             <strong>📱 Consulta disponibilidad y precios exactos</strong>
           </p>
           <p class="text-gray-600">
-            Escríbenos por WhatsApp para confirmar fechas y obtener una cotización
-            personalizada
+            Escríbenos por WhatsApp para confirmar fechas y obtener una
+            cotización personalizada
           </p>
         </div>
       </div>
@@ -1062,7 +1052,9 @@ import { initFincaGallery } from "../lib/createGallerySwiper";
   <!-- CTA Final Section -->
   <section class="py-20 bg-linear-to-br from-green-600 to-green-700 text-white">
     <div class="max-w-4xl mx-auto px-4 text-center">
-      <h2 class="text-4xl md:text-5xl font-bold mb-6">¿Listo para descansar?</h2>
+      <h2 class="text-4xl md:text-5xl font-bold mb-6">
+        ¿Listo para descansar?
+      </h2>
       <p class="text-xl md:text-2xl mb-10 opacity-90">
         Reserva ahora y vive una experiencia inolvidable en Finca la Sociedad
       </p>
@@ -1087,11 +1079,11 @@ import { initFincaGallery } from "../lib/createGallerySwiper";
         <h3 class="text-3xl font-bold mb-4">Finca la Sociedad</h3>
         <p class="text-gray-400 mb-6 font-bold">Antioquia, Colombia</p>
         <p class="text-gray-500 mb-6">
-          En el corazón de Santa Fe de Antioquia, donde el sol calienta despacio y
-          el tiempo parece ir más lento, nace Finca La Sociedad. Un lugar rodeado
-          de naturaleza y calma, pensado para descansar, compartir y desconectarse
-          del ruido. Aquí, cada día invita a disfrutar del paisaje, del silencio y
-          del encanto sencillo de la vida en el campo.
+          En el corazón de Santa Fe de Antioquia, donde el sol calienta despacio
+          y el tiempo parece ir más lento, nace Finca La Sociedad. Un lugar
+          rodeado de naturaleza y calma, pensado para descansar, compartir y
+          desconectarse del ruido. Aquí, cada día invita a disfrutar del
+          paisaje, del silencio y del encanto sencillo de la vida en el campo.
         </p>
       </div>
       <div class="w-1/2">
@@ -1232,5 +1224,3 @@ import { initFincaGallery } from "../lib/createGallerySwiper";
     });
   </script>
 </Layout>
-
-
