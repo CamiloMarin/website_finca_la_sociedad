@@ -11,12 +11,13 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
 
 <Layout title="Finca la Sociedad - Alquiler de Finca en Antioquia, Colombia">
   <!-- Main Menu Section -->
-  <header>
+
+  <!-- <header>
     <div
       class="master-header max-w-7xl mx-auto px-4 flex justify-between items-center"
     >
       <div class="logo-main">
-        <!-- Logo -->
+        
         <img
           src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=64&q=80"
           alt="Finca la Sociedad Logo"
@@ -44,6 +45,40 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
               href="#contact"
               class="text-gray-700 hover:text-green-600 font-medium">Contacto</a
             >
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header> -->
+
+  <header class="fixed top-4 left-1/2 -translate-x-1/2 z-50">
+    <div
+      class="flex items-center justify-between gap-10
+           px-6 py-3
+           bg-[#0b1220]/80 backdrop-blur-md
+           border border-white/10
+           rounded-full"
+    >
+      <!-- Logo -->
+      <div class="flex items-center gap-2">
+        <img
+          src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=64&q=80"
+          alt="Logo"
+          class="w-8 h-8 rounded-full"
+        />
+      </div>
+
+      <!-- Menu -->
+      <nav>
+        <ul class="flex items-center gap-6">
+          <li>
+            <a href="#services" class="nav-link">Docs</a>
+          </li>
+          <li>
+            <a href="#gallery" class="nav-link">Resources</a>
+          </li>
+          <li>
+            <a href="#contact" class="nav-link">Premium</a>
           </li>
         </ul>
       </nav>
@@ -879,9 +914,9 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
   </style>
 
   <!-- script / Galería, CreateSwiper -->
-  <script src="../lib/createGallerySwiper.ts">
-    initFincaGallery();
-  </script>
+  <script
+    src="../components/swiper/swiper-custom-components/createGallerySwiper.ts"
+  ></script>
 
   <!-- Ubicación Section -->
   <section class="py-20 bg-gray-50">

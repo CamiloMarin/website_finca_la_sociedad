@@ -1,3 +1,12 @@
+//
+// Usamos este componente para crear instancias de Swiper para construir los sliders
+// personalizados en la aplicación. LLamamos a la librería Swiper y definimos una función
+// createSwiper que recibe un selector y opciones para inicializar el Swiper en el
+// elemento correspondiente del DOM.
+
+// Luego en cada componente definimos las opciones específicas del Swiper que queremos crear.
+//
+
 // importamos el componente Slider desde la librería 'swiper'
 import Swiper from "swiper";
 

@@ -1,8 +1,5 @@
-import { createSwiper } from "../lib/createSwiper";
+import { createSwiper } from "../createSwiper";
 import { Navigation, Pagination, Keyboard } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
 
 export function initFincaGallery() {
   // Elementos a capturar:
