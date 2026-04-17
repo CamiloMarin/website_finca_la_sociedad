@@ -809,12 +809,9 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
     class="fixed inset-0 bg-[#000000ec] bg-opacity-95 z-50 hidden items-center justify-center"
   >
 
-    <div id="new_finca-gallery-lightbox">
-
-    </div>
     <button
       id="close-finca-gallery"
-      class="absolute top-4 right-4 text-white text-4xl z-50 hover:text-gray-300 transition-colors w-12 h-12 flex items-center justify-center"
+      class="absolute top-4 right-4 text-white text-4xl z-50 hover:text-gray-300 hover:cursor-pointer transition-colors w-12 h-12 flex items-center justify-center"
       aria-label="Cerrar galería"
     >
       ×
@@ -822,9 +819,9 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
 
     <!-- Container con padding para las flechas y paginación -->
     <div
-      class="w-full h-full px-4 md:px-16 py-16 md:py-20 flex items-center justify-center"
+      class="w-full h-3/4 px-4 md:px-16 py-16 flex items-center justify-center"
     >
-      <div class="swiper finca-gallery-swiper w-full h-full relative">
+      <div class="swiper finca-gallery-swiper hover:cursor-move w-full h-full relative">
         <div class="swiper-wrapper">
           <div class="swiper-slide flex items-center justify-center p-4">
             <img
@@ -890,6 +887,7 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
     </div>
   </div>
   <!-- CSS / Galería Section -->
+
   <style>
     /* Mejorar visibilidad de las flechas */
     .finca-gallery-swiper .swiper-button-next,
@@ -1262,4 +1260,5 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
       observer.observe(section);
     });
   </script>
+
 </Layout>

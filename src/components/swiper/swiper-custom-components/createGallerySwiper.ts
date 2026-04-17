@@ -3,7 +3,7 @@ import { Navigation, Pagination, Keyboard } from "swiper/modules";
 
 export function initFincaGallery() {
   // Elementos a capturar:
-  const lightbox = document.getElementById("new_finca-gallery-lightbox");
+  const lightbox = document.getElementById("finca-gallery-lightbox");
   const closeBtn = document.getElementById("close-finca-gallery");
   const galleryImages = document.querySelectorAll("[data-gallery-img]");
 
